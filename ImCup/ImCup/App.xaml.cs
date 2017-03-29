@@ -8,8 +8,8 @@ namespace ImCup {
     public partial class App : Application {
         public App() {
             InitializeComponent ();
-
-            SetMainPage ();
+            Current.MainPage = new MenuPage();
+            //SetMainPage ();
         }
 
         public static void SetMainPage() {
