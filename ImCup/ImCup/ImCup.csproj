@@ -100,6 +100,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="DeviceMotion.Plugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.DeviceMotion.1.1.2\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\DeviceMotion.Plugin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DeviceMotion.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.DeviceMotion.1.1.2\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\DeviceMotion.Plugin.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Lottie.Forms, Version=1.0.6295.35001, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Com.Airbnb.Xamarin.Forms.Lottie.1.5.2\lib\portable-net45+wp8+win+wpa81+dnxcore50\Lottie.Forms.dll</HintPath>
       <Private>True</Private>

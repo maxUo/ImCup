@@ -18,7 +18,7 @@
             Grid.Row="0"
             Animation="walk.json"
             AutoPlay="False"
-            Loop="False"/>
+            Loop="False" />
         <Button
             Clicked="Button_On"
             HorizontalOptions="FillAndExpand"
@@ -32,6 +32,7 @@
             <ScrollView HorizontalOptions="FillAndExpand">
                 <StackLayout>
                     <Label
+                        x:Name="lbGyro"
                         FontSize="22"
                         HorizontalTextAlignment="Center"
                         Text="Юный авантюрист Панда-По решил отправиться на поиски сокровищ." />
