@@ -17,7 +17,7 @@
             x:Name="AnimationView"
             Grid.Row="0"
             Animation="walk.json"
-            AutoPlay="False"
+            AutoPlay="True"
             Loop="False" />
         <Button
             Clicked="Button_On"
