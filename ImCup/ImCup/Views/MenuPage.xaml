@@ -6,14 +6,16 @@
     xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="10*" />
+            <RowDefinition Height="35*" />
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="100*" />
         </Grid.RowDefinitions>
-        <Label
-            FontSize="Large"
-            HorizontalTextAlignment="Center"
-            Text="Сказки из сундука" />
-        <forms:CarouselView Grid.Row="1" ItemsSource="{Binding LViewModel}">
+        <Image
+            Grid.RowSpan="3"
+            Aspect="AspectFill"
+            Opacity="1"
+            Source="muune.png" />
+        <forms:CarouselView Grid.Row="2" ItemsSource="{Binding LViewModel}">
             <forms:CarouselView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -32,11 +34,12 @@
                             Grid.Row="1"
                             FontSize="Large"
                             HorizontalTextAlignment="Center"
-                            Text="{Binding Text}"
+                            Text="{Binding}"
                             TextColor="Accent" />
                     </Grid>
                 </DataTemplate>
             </forms:CarouselView.ItemTemplate>
         </forms:CarouselView>
+
     </Grid>
 </ContentPage>

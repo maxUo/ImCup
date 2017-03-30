@@ -20,7 +20,8 @@ namespace ImCup.Views {
             LViewModel = new ObservableCollection<ViewDataObject>()
             {
                 new ViewDataObject() {Text = "Сказки", ImageSource = "chestIcon.png"},
-                new ViewDataObject() {Text = "Справка", ImageSource = "iconV.png"}
+                new ViewDataObject() {Text = "", ImageSource = "iconV.png"},
+                new ViewDataObject() {Text = "", ImageSource = "iconV.png"}
             };
 
             BindingContext = this;
@@ -39,7 +40,7 @@ namespace ImCup.Views {
         public ObservableCollection<ViewDataObject> LViewModel { get; set; }
 
         private async void Button_OnClicked( object sender, EventArgs e ) {
-            await Navigation.PushModalAsync((new AboutPage ()));
+            await Navigation.PushModalAsync(new Scene1.FisrtPage());
         }
     }
 }

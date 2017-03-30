@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ImCup.Scene1.SecondPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+    <Grid BackgroundColor="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <Image
+            Grid.RowSpan="2"
+            Aspect="AspectFit"
+            Source="road1.png" />
+        <forms:AnimationView
+            x:Name="AnimationView"
+            Grid.Row="0"
+            Animation="walk.json"
+            AutoPlay="False"
+            Loop="False"/>
+        <Button
+            Clicked="Button_On"
+            HorizontalOptions="FillAndExpand"
+            Opacity="0"
+            VerticalOptions="FillAndExpand" />
+        <StackLayout Grid.Row="1" Orientation="Horizontal">
+            <Image
+                Aspect="AspectFill"
+                HorizontalOptions="FillAndExpand"
+                Source="backActive.png" />
+            <ScrollView HorizontalOptions="FillAndExpand">
+                <StackLayout>
+                    <Label
+                        FontSize="22"
+                        HorizontalTextAlignment="Center"
+                        Text="Юный авантюрист Панда-По решил отправиться на поиски сокровищ." />
+                    <Label
+                        FontSize="22"
+                        HorizontalTextAlignment="Center"
+                        Text="Он двинулся в путь, взяв в дорогу немного провизии" />
+                    <Label
+                        FontSize="22"
+                        HorizontalTextAlignment="Center"
+                        Text="Он двинулся в путь, взяв в дорогу немного провизии," />
+                    <Label
+                        FontSize="22"
+                        HorizontalTextAlignment="Center"
+                        Text="карту, компас и подзорную трубу. " />
+                </StackLayout>
+            </ScrollView>
+            <Grid>
+                <Image Source="nextActive.png" />
+                <Button
+                    Clicked="Button_OnClicked"
+                    HorizontalOptions="FillAndExpand"
+                    Opacity="0"
+                    VerticalOptions="FillAndExpand" />
+            </Grid>
+
+        </StackLayout>
+    </Grid>
+</ContentPage>
