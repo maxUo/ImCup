@@ -38,6 +38,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IAudio.cs" />
+    <Compile Include="Interfaces\PlaySound.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scene1\FisrtPage.xaml.cs">
       <DependentUpon>FisrtPage.xaml</DependentUpon>

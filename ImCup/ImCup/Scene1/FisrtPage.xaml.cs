@@ -21,5 +21,10 @@ namespace ImCup.Scene1 {
             
             await Navigation.PushModalAsync(new Scene1.SecondPage());
         }
+
+        private async Task ButtonBackClick(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
     }
 }

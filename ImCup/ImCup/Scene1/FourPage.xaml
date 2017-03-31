@@ -9,57 +9,54 @@
             <RowDefinition Height="10*" />
             <RowDefinition Height="3*" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
 
         <Image
             Grid.RowSpan="2"
+            Grid.ColumnSpan="2"
             Source="arbre1.png"
-            VerticalOptions="StartAndExpand" />
+            VerticalOptions="Start" />
+
+        <Image
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="0"
+            Margin="0,40,0,0"
+            Source="pandaVbok.png" />
+        <forms:AnimationView
+            x:Name="AnimationView"
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="1"
+            Animation="bee.json"
+            AutoPlay="False"
+            Loop="False" />
 
         <Grid
-            Grid.RowSpan="2"
-            HorizontalOptions="Center"
-            VerticalOptions="End">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-            </Grid.RowDefinitions>
-
-            <Image
-                Grid.Row="0"
-                Grid.Column="0"
-                Source="helpaYabloko.png"
-                VerticalOptions="End" />
-            <Image
-                Grid.Row="1"
-                Grid.Column="0"
-                Source="pandaVbok.png"
-                VerticalOptions="End" />
-            <forms:AnimationView
-                x:Name="AnimationView"
-                Grid.Row="0"
-                Grid.RowSpan="2"
-                Grid.Column="1"
-                Animation="bee.json"
-                AutoPlay="False"
-                Loop="False" />
-
-        </Grid>
-
-        <Grid Grid.Row="1" HorizontalOptions="FillAndExpand">
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HorizontalOptions="FillAndExpand">
             <BoxView
                 BackgroundColor="White"
                 HorizontalOptions="FillAndExpand"
                 Opacity="0.4"
                 VerticalOptions="FillAndExpand" />
             <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                <Image
-                    Aspect="AspectFit"
-                    Opacity="0"
-                    Source="backActive.png" />
+                <Grid>
+                    <Image
+                        Aspect="AspectFit"
+                        HorizontalOptions="FillAndExpand"
+                        Source="backActive.png" />
+                    <Button
+                        Clicked="ButtonBackClick"
+                        HorizontalOptions="FillAndExpand"
+                        Opacity="0"
+                        VerticalOptions="FillAndExpand" />
+                </Grid>
                 <ScrollView HorizontalOptions="FillAndExpand">
                     <StackLayout Spacing="10">
                         <Label

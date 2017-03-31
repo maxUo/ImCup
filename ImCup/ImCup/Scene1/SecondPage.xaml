@@ -38,6 +38,10 @@
                         Aspect="AspectFit"
                         HorizontalOptions="FillAndExpand"
                         Source="backActive.png" />
+                    <Button Clicked="ButtonBackClick"
+                            HorizontalOptions="FillAndExpand"
+                            Opacity="0"
+                            VerticalOptions="FillAndExpand" ></Button>
                 </Grid>
                 <ScrollView HorizontalOptions="FillAndExpand">
                     <StackLayout Spacing="10">

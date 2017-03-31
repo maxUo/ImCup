@@ -17,6 +17,7 @@
             <Image
                 Grid.Row="0"
                 Grid.RowSpan="2"
+                Margin="0,40,0,0"
                 HorizontalOptions="Center"
                 Source="pandaAndDed.png"
                 VerticalOptions="End" />
@@ -28,10 +29,15 @@
                     Opacity="0.4"
                     VerticalOptions="FillAndExpand" />
                 <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                    <Image
-                        Aspect="AspectFit"
-                        Opacity="0"
-                        Source="nextActive.png" />
+                    <Grid>
+                        <Button
+                            Clicked="ButtonBackClick"
+                            HorizontalOptions="FillAndExpand"
+                            Opacity="0"
+                            VerticalOptions="FillAndExpand" />
+                        <Image Aspect="AspectFit" Source="backActive.png" />
+                    </Grid>
+
                     <ScrollView HorizontalOptions="FillAndExpand">
                         <StackLayout Spacing="10">
                             <Label

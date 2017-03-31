@@ -17,7 +17,7 @@ namespace ImCup.Views {
 
             LViewModel = new ObservableCollection<ViewDataObject> ()
             {
-                new ViewDataObject() {Text = "Сказки", ImageSource = "chestIcon.png"},
+                new ViewDataObject() {Text = "Сказки", ImageSource = "iconChessBorder.png"},
                 new ViewDataObject() {Text = "", ImageSource = "iconV.png"},
                 new ViewDataObject() {Text = "", ImageSource = "iconV.png"}
             };
