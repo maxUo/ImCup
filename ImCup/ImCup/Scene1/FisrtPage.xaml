@@ -4,72 +4,64 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
-    <ContentView Content="{Binding ViewsForPresent}">
+    <ContentView>
         <Grid BackgroundColor="Transparent">
             <Grid.RowDefinitions>
-                <RowDefinition Height="4*" />
-                <RowDefinition Height="12*" />
+                <RowDefinition Height="10*" />
                 <RowDefinition Height="3*" />
             </Grid.RowDefinitions>
             <Image
-                x:Name="imgBack"
-                Grid.RowSpan="3"
-                Aspect="AspectFill"
-                Source="scene1fonOfHouse.png" />
-            <forms:AnimationView
-                x:Name="AnimationView"
-                Grid.Row="0"
-                Animation="cloudsAnim.json"
-                AutoPlay="True"
-                Loop="True" />
+                Grid.RowSpan="2"
+                Source="house.png"
+                VerticalOptions="StartAndExpand" />
             <Image
-                Grid.RowSpan="3"
-                Aspect="AspectFill"
-                Source="scene1homeWithoutFon.png" />
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                HorizontalOptions="Center"
+                Source="pandaAndDed.png"
+                VerticalOptions="End" />
             <!--  walk.json  -->
-            <Button
-                x:Name="StartAnimation"
-                Grid.Row="1"
-                Clicked="StartAnimation_OnClicked"
-                HorizontalOptions="FillAndExpand"
-                IsEnabled="False"
-                Opacity="0"
-                VerticalOptions="FillAndExpand" />
-
-
-            <StackLayout Grid.Row="2" Orientation="Horizontal">
-
-                <Image HorizontalOptions="FillAndExpand" />
-                <ScrollView HorizontalOptions="FillAndExpand">
-                    <StackLayout>
-                        <Label
-                            FontSize="20"
-                            HorizontalTextAlignment="Center"
-                            Text="В Солнечном Краю жил-был Панда-По." />
-                        <Label
-                            FontSize="20"
-                            HorizontalTextAlignment="Center"
-                            Text="Однажды он услышал от своего деда легенду о сокровищах," />
-                        <Label
-                            FontSize="20"
-                            HorizontalTextAlignment="Center"
-                            Text="сокрытых в пещере на вершине горы" />
-                        <Label
-                            FontSize="20"
-                            HorizontalTextAlignment="Center"
-                            Text="Когнито где-то на севере" />
-                    </StackLayout>
-                </ScrollView>
-                <Grid>
-                    <Button
-                        Clicked="Button_OnClicked"
-                        HorizontalOptions="FillAndExpand"
+            <Grid Row="1">
+                <BoxView
+                    BackgroundColor="White"
+                    HorizontalOptions="FillAndExpand"
+                    Opacity="0.4"
+                    VerticalOptions="FillAndExpand" />
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                    <Image
+                        Aspect="AspectFit"
                         Opacity="0"
-                        VerticalOptions="FillAndExpand" />
-                    <Image Aspect="AspectFit" Source="nextActive.png" />
-                </Grid>
-            </StackLayout>
-
+                        Source="nextActive.png" />
+                    <ScrollView HorizontalOptions="FillAndExpand">
+                        <StackLayout Spacing="10">
+                            <Label
+                                FontSize="24"
+                                HorizontalTextAlignment="Center"
+                                Text="В Солнечном Краю жил-был Панда-По." />
+                            <Label
+                                FontSize="24"
+                                HorizontalTextAlignment="Center"
+                                Text="Однажды он услышал от своего деда легенду о сокровищах," />
+                            <Label
+                                FontSize="24"
+                                HorizontalTextAlignment="Center"
+                                Text="сокрытых в пещере на вершине горы" />
+                            <Label
+                                FontSize="24"
+                                HorizontalTextAlignment="Center"
+                                Text="Когнито где-то на севере" />
+                        </StackLayout>
+                    </ScrollView>
+                    <Grid>
+                        <Button
+                            Clicked="Button_OnClicked"
+                            HorizontalOptions="FillAndExpand"
+                            Opacity="0"
+                            VerticalOptions="FillAndExpand" />
+                        <Image Aspect="AspectFit" Source="nextActive.png" />
+                    </Grid>
+                </StackLayout>
+            </Grid>
         </Grid>
     </ContentView>
 </ContentPage>

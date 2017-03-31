@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ImCup.Scene1.FourPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+
+        <Image
+            Grid.RowSpan="2"
+            Source="arbre1.png"
+            VerticalOptions="StartAndExpand" />
+
+        <Grid
+            Grid.RowSpan="2"
+            HorizontalOptions="Center"
+            VerticalOptions="End">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Image
+                Grid.Row="0"
+                Grid.Column="0"
+                Source="helpaYabloko.png"
+                VerticalOptions="End" />
+            <Image
+                Grid.Row="1"
+                Grid.Column="0"
+                Source="pandaVbok.png"
+                VerticalOptions="End" />
+            <forms:AnimationView
+                x:Name="AnimationView"
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                Animation="bee.json"
+                AutoPlay="False"
+                Loop="False" />
+
+        </Grid>
+
+        <Grid Grid.Row="1" HorizontalOptions="FillAndExpand">
+            <BoxView
+                BackgroundColor="White"
+                HorizontalOptions="FillAndExpand"
+                Opacity="0.4"
+                VerticalOptions="FillAndExpand" />
+            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                <Image
+                    Aspect="AspectFit"
+                    Opacity="0"
+                    Source="backActive.png" />
+                <ScrollView HorizontalOptions="FillAndExpand">
+                    <StackLayout Spacing="10">
+                        <Label
+                            FontSize="24"
+                            HorizontalTextAlignment="Center"
+                            Text="Путь его лежал мимо большой яблони" />
+                        <Label
+                            FontSize="24"
+                            HorizontalTextAlignment="Center"
+                            Text="Искатель сокровищ шел целый день и проголодался," />
+                        <Label
+                            FontSize="24"
+                            HorizontalTextAlignment="Center"
+                            Text=", так что он решил набрать немного яблок." />
+                        <Label
+                            FontSize="24"
+                            HorizontalTextAlignment="Center"
+                            Text="Однако плоды росли слишком высоко!" />
+                        <Label
+                            FontSize="24"
+                            HorizontalTextAlignment="Center"
+                            Text="Придется трясти дерево!" />
+                    </StackLayout>
+                </ScrollView>
+                <Grid>
+                    <Button
+                        HorizontalOptions="FillAndExpand"
+                        Opacity="0"
+                        VerticalOptions="FillAndExpand" />
+                    <Image Aspect="AspectFit" Source="acelerometre.png" />
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

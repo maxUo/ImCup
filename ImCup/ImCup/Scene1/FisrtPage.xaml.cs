@@ -16,11 +16,6 @@ namespace ImCup.Scene1 {
             
         }
 
-        private void StartAnimation_OnClicked(object sender, EventArgs e)
-        {
-
-        }
-
         private async void Button_OnClicked(object sender, EventArgs e)
         {
             

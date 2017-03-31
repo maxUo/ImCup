@@ -13,5 +13,10 @@ namespace ImCup.Scene1 {
         public ThredPage() {
             InitializeComponent ();
         }
+
+        private async void Button_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new FourPage());
+        }
     }
 }

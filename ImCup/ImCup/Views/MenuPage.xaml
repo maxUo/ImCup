@@ -14,7 +14,7 @@
             Grid.RowSpan="3"
             Aspect="AspectFill"
             Opacity="1"
-            Source="muune.png" />
+            Source="menu720.png" />
         <forms:CarouselView Grid.Row="2" ItemsSource="{Binding LViewModel}">
             <forms:CarouselView.ItemTemplate>
                 <DataTemplate>

@@ -4,8 +4,6 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ImCup.Models;
-using ImCup.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,7 +15,7 @@ namespace ImCup.Views {
         public MenuPage() {
             InitializeComponent ();
 
-            LViewModel = new ObservableCollection<ViewDataObject>()
+            LViewModel = new ObservableCollection<ViewDataObject> ()
             {
                 new ViewDataObject() {Text = "Сказки", ImageSource = "chestIcon.png"},
                 new ViewDataObject() {Text = "", ImageSource = "iconV.png"},
@@ -27,20 +25,16 @@ namespace ImCup.Views {
             BindingContext = this;
         }
 
-        /*private ObservableCollection<ViewDataObject> GetContent()
-        {
-            var k = new ObservableCollection<ViewDataObject>()
-            {
-                new ViewDataObject() {Text = "Сказки", ImageSource = "chestIcon.png"},
-                new ViewDataObject() {Text = "Справка", ImageSource = "iconV.png"}
-            };
-            return k;
-        }         */
-
         public ObservableCollection<ViewDataObject> LViewModel { get; set; }
 
         private async void Button_OnClicked( object sender, EventArgs e ) {
             await Navigation.PushModalAsync(new Scene1.FisrtPage());
         }
+    }
+
+    public class ViewDataObject
+    {
+        public string ImageSource { get; set; }
+        public string Text { get; set; }
     }
 }
