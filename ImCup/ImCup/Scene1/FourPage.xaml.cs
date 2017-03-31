@@ -21,6 +21,7 @@ namespace ImCup.Scene1 {
             {
                 if ( !_isUsed && (((MotionVector)e.Value).Z < 0 || ((MotionVector)e.Value).Z > 20) ) {
                     this.AnimationView.Play ();
+                    DependencyService.Get<IAudio>().PlayMp3File("1");
                     //this.imgHelpa.Opacity = 0;
                 }
             };

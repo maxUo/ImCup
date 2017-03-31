@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ImCup.Interfaces;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,7 +22,7 @@ namespace ImCup.Views {
                 new ViewDataObject() {Text = "", ImageSource = "iconV.png"},
                 new ViewDataObject() {Text = "", ImageSource = "iconV.png"}
             };
-
+            DependencyService.Get<IAudio>().PlayWavFile("a");
             BindingContext = this;
         }
 

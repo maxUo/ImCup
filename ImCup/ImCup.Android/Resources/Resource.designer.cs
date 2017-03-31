@@ -5812,6 +5812,9 @@ namespace ImCup.Droid
 			// aapt resource value: 0x7f070000
 			public const int BZZZZ = 2131165184;
 			
+			// aapt resource value: 0x7f070001
+			public const int Fon = 2131165185;
+			
 			static Raw()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

@@ -17,12 +17,15 @@ namespace ImCup.Droid.Services
 
         public bool PlayMp3File(string fileName)
         {
+            _mediaPlayer = MediaPlayer.Create (global::Android.App.Application.Context, Resource.Raw.BZZZZ);
+            
+            _mediaPlayer.Start ();
             return true;
         }
 
         public bool PlayWavFile(string fileName)
         {
-            _mediaPlayer = MediaPlayer.Create(global::Android.App.Application.Context, Resource.Raw.BZZZZ);
+            _mediaPlayer = MediaPlayer.Create(global::Android.App.Application.Context, Resource.Raw.Fon);
             _mediaPlayer.Start();
 
             return true;
