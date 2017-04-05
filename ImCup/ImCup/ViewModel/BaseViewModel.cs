@@ -33,6 +33,7 @@ namespace ImCup.ViewModel {
         public ICommand NextSceneCommand { set; get; }
         public ICommand BackSceneCommand { set; get; }
 
+        #region Обвязка на поля базовой модели
         public string ImageFon
         {
             get { return BaseView.ImageFon; }
@@ -233,6 +234,7 @@ namespace ImCup.ViewModel {
                 }
             }
         }
+        #endregion
 
         protected virtual void NextScene()
         {
