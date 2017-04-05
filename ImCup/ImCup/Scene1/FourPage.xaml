@@ -3,7 +3,8 @@
     x:Class="ImCup.Scene1.FourPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:forms1="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*" />
@@ -14,13 +15,13 @@
             <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
 
-        <Image
+        <forms1:CachedImage
             Grid.RowSpan="2"
             Grid.ColumnSpan="2"
             Source="arbre1.png"
             VerticalOptions="Start" />
 
-        <Image
+        <forms1:CachedImage
             Grid.Row="0"
             Grid.RowSpan="2"
             Grid.Column="0"
@@ -47,7 +48,7 @@
                 VerticalOptions="FillAndExpand" />
             <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                 <Grid>
-                    <Image
+                    <forms1:CachedImage
                         Aspect="AspectFit"
                         HorizontalOptions="FillAndExpand"
                         Source="backActive.png" />
@@ -86,7 +87,7 @@
                         HorizontalOptions="FillAndExpand"
                         Opacity="0"
                         VerticalOptions="FillAndExpand" />
-                    <Image Aspect="AspectFit" Source="acelerometre.png" />
+                    <forms1:CachedImage Aspect="AspectFit" Source="acelerometre.png" />
                 </Grid>
             </StackLayout>
         </Grid>

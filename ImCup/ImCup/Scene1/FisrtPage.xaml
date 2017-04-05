@@ -3,6 +3,8 @@
     x:Class="ImCup.Scene1.FisrtPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
     <ContentView>
         <Grid BackgroundColor="Transparent">
@@ -10,11 +12,12 @@
                 <RowDefinition Height="10*" />
                 <RowDefinition Height="3*" />
             </Grid.RowDefinitions>
-            <Image
+
+            <ffimageloading:CachedImage
                 Grid.RowSpan="2"
                 Source="house.png"
                 VerticalOptions="StartAndExpand" />
-            <Image
+            <ffimageloading:CachedImage
                 Grid.Row="0"
                 Grid.RowSpan="2"
                 Margin="0,40,0,0"
@@ -35,7 +38,7 @@
                             HorizontalOptions="FillAndExpand"
                             Opacity="0"
                             VerticalOptions="FillAndExpand" />
-                        <Image Aspect="AspectFit" Source="backActive.png" />
+                        <ffimageloading:CachedImage Aspect="AspectFit" Source="backActive.png" />
                     </Grid>
 
                     <ScrollView HorizontalOptions="FillAndExpand">
@@ -64,7 +67,7 @@
                             HorizontalOptions="FillAndExpand"
                             Opacity="0"
                             VerticalOptions="FillAndExpand" />
-                        <Image Aspect="AspectFit" Source="nextActive.png" />
+                        <ffimageloading:CachedImage Aspect="AspectFit" Source="nextActive.png" />
                     </Grid>
                 </StackLayout>
             </Grid>

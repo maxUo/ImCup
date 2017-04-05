@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ImCup.View.MainView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    BindingContext="BaseViewModel">
+    <Grid BackgroundColor="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <ffimage:CachedImage
+            Grid.Row="0"
+            Grid.RowSpan="{Binding ImageFonGridRowSpan}"
+            Grid.Column="0"
+            Grid.ColumnSpan="{Binding ImageFonGridColumnSpan}"
+            Source="{Binding ImageFon}" />
+        <ffimage:CachedImage
+            Grid.Row="0"
+            Grid.RowSpan="{Binding ImageLeftGridRowSpan}"
+            Grid.Column="0"
+            Grid.ColumnSpan="{Binding ImageLeftGridColumnSpan}"
+            Source="{Binding ImageLeft}" />
+        <ffimage:CachedImage
+            Grid.Row="0"
+            Grid.RowSpan="{Binding ImageRightGridRowSpan}"
+            Grid.Column="2"
+            Grid.ColumnSpan="{Binding ImageRightGridColumnSpan}"
+            Source="{Binding ImageRight}" />
+        <lottie:AnimationView
+            Grid.Row="0"
+            Grid.RowSpan="{Binding AnimationLeftRowSpan}"
+            Grid.Column="0"
+            Grid.ColumnSpan="{Binding AnimationLeftColumnSpan}"
+            Animation="{Binding AnimationLeft}" />
+        <lottie:AnimationView
+            Grid.Row="0"
+            Grid.RowSpan="{Binding AnimationRightGridRowSpan}"
+            Grid.Column="2"
+            Grid.ColumnSpan="{Binding AnimationRightGridColumnSpan}"
+            Animation="{Binding AnimationRight}" />
+        <ffimage:CachedImage
+            Grid.Row="1"
+            Grid.Column="0"
+            Aspect="AspectFit"
+            Source="{Binding NavigationImageLeft}" />
+        <ffimage:CachedImage
+            Grid.Row="1"
+            Grid.Column="3"
+            Aspect="AspectFit"
+            Source="{Binding NavigationImageRight}" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            Command="{Binding BackSceneCommand}"
+            HorizontalOptions="FillAndExpand"
+            IsEnabled="{Binding NavigationLeftButtonIsEnabled}"
+            Opacity="0"
+            VerticalOptions="FillAndExpand" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="3"
+            Command="{Binding NextSceneCommand}"
+            HorizontalOptions="FillAndExpand"
+            IsEnabled="{Binding NavigationRightButtonIsEnabled}"
+            Opacity="0"
+            VerticalOptions="FillAndExpand" />
+        <Label
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            FontSize="26"
+            HorizontalOptions="FillAndExpand"
+            HorizontalTextAlignment="Center"
+            Text="{Binding Text}" />
+    </Grid>
+</ContentPage>

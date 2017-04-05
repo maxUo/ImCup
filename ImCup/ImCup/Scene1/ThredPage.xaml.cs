@@ -18,9 +18,10 @@ namespace ImCup.Scene1 {
         {
             await Navigation.PushModalAsync(new FourPage());
         }
-
+        private bool isNewPage = false;
         private async void ButtonBackClick(object sender, EventArgs e)
         {
+            if(!isNewPage)
             await Navigation.PopModalAsync();
         }
     }

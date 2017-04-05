@@ -3,14 +3,15 @@
     x:Class="ImCup.Views.MenuPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
+    xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+    xmlns:forms1="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35*" />
             <RowDefinition Height="20*" />
             <RowDefinition Height="100*" />
         </Grid.RowDefinitions>
-        <Image
+        <forms1:CachedImage
             Grid.RowSpan="3"
             Aspect="AspectFill"
             Opacity="1"

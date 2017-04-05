@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ImCup.Interfaces;
+using ImCup.Model;
+using ImCup.View;
+using ImCup.ViewModel.FirstDream;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -28,8 +31,9 @@ namespace ImCup.Views {
 
         public ObservableCollection<ViewDataObject> LViewModel { get; set; }
 
-        private async void Button_OnClicked( object sender, EventArgs e ) {
-            await Navigation.PushModalAsync(new Scene1.FisrtPage());
+        private async void Button_OnClicked( object sender, EventArgs e )
+        {
+            await Navigation.PushModalAsync(new MainView (new FirstSceneViewModel ()));
         }
     }
 

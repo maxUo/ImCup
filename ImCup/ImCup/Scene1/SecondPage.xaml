@@ -3,7 +3,8 @@
     x:Class="ImCup.Scene1.SecondPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:forms1="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
     <Grid BackgroundColor="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="10*" />
@@ -34,14 +35,15 @@
                 VerticalOptions="FillAndExpand" />
             <StackLayout Orientation="Horizontal">
                 <Grid>
-                    <Image
+                    <forms1:CachedImage
                         Aspect="AspectFit"
                         HorizontalOptions="FillAndExpand"
                         Source="backActive.png" />
-                    <Button Clicked="ButtonBackClick"
-                            HorizontalOptions="FillAndExpand"
-                            Opacity="0"
-                            VerticalOptions="FillAndExpand" ></Button>
+                    <Button
+                        Clicked="ButtonBackClick"
+                        HorizontalOptions="FillAndExpand"
+                        Opacity="0"
+                        VerticalOptions="FillAndExpand" />
                 </Grid>
                 <ScrollView HorizontalOptions="FillAndExpand">
                     <StackLayout Spacing="10">
@@ -65,7 +67,7 @@
                     </StackLayout>
                 </ScrollView>
                 <Grid>
-                    <Image Aspect="AspectFit" Source="nextActive.png" />
+                    <forms1:CachedImage Aspect="AspectFit" Source="nextActive.png" />
                     <Button
                         Clicked="Button_OnClicked"
                         HorizontalOptions="FillAndExpand"

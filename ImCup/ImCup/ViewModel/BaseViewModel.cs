@@ -1,0 +1,256 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using DeviceMotion.Plugin;
+using DeviceMotion.Plugin.Abstractions;
+using ImCup.Annotations;
+using ImCup.Model;
+using Xamarin.Forms;
+
+namespace ImCup.ViewModel {
+    public class BaseViewModel: INotifyPropertyChanged {
+        public event PropertyChangedEventHandler PropertyChanged;
+        public Action NextView;
+
+        public BaseViewModel()
+        {
+            BaseView = new BaseView();
+            NextSceneCommand = new Command(NextScene);
+            BackSceneCommand = new Command(BackScene);
+            CrossDeviceMotion.Current.Start (MotionSensorType.Accelerometer);
+            CrossDeviceMotion.Current.SensorValueChanged += Current_SensorValueChanged;
+        }
+        protected virtual void Current_SensorValueChanged( object sender, SensorValueChangedEventArgs e ) {
+            
+        }
+        
+        public BaseView BaseView { get; set; }
+        public ICommand NextSceneCommand { set; get; }
+        public ICommand BackSceneCommand { set; get; }
+
+        public string ImageFon
+        {
+            get { return BaseView.ImageFon; }
+            set {
+                if ( BaseView.ImageFon != value ) {
+                    BaseView.ImageFon = value;
+                    OnPropertyChanged ("ImageFon");
+                }
+            }
+        }
+        public string ImageLeft {
+            get { return BaseView.ImageLeft; }
+            set
+            {
+                if ( BaseView.ImageLeft != value ) {
+                    BaseView.ImageLeft = value;
+                    OnPropertyChanged ("ImageLeft");
+                }
+            }
+        }
+        public string ImageRight {
+            get { return BaseView.ImageRight; }
+            set
+            {
+                if ( BaseView.ImageRight != value ) {
+                    BaseView.ImageRight = value;
+                    OnPropertyChanged ("ImageRight");
+                }
+            }
+        }
+        public string ImageFonGridRowSpan {
+            get { return BaseView.ImageFonGridRowSpan; }
+            set
+            {
+                if ( BaseView.ImageFonGridRowSpan != value ) {
+                    BaseView.ImageFonGridRowSpan = value;
+                    OnPropertyChanged ("ImageFonGridRowSpan");
+                }
+            }
+        }
+        public string ImageFonGridColumnSpan {
+            get { return BaseView.ImageFonGridColumnSpan; }
+            set
+            {
+                if ( BaseView.ImageFonGridColumnSpan != value ) {
+                    BaseView.ImageFonGridColumnSpan = value;
+                    OnPropertyChanged ("ImageFonGridColumnSpan");
+                }
+            }
+        }
+        public string ImageLeftGridRowSpan {
+            get { return BaseView.ImageLeftGridRowSpan; }
+            set
+            {
+                if ( BaseView.ImageLeftGridRowSpan != value ) {
+                    BaseView.ImageLeftGridRowSpan = value;
+                    OnPropertyChanged ("ImageLeftGridRowSpan");
+                }
+            }
+        }
+        public string ImageLeftGridColumnSpan {
+            get { return BaseView.ImageLeftGridColumnSpan; }
+            set
+            {
+                if ( BaseView.ImageLeftGridColumnSpan != value ) {
+                    BaseView.ImageLeftGridColumnSpan = value;
+                    OnPropertyChanged ("ImageLeftGridColumnSpan");
+                }
+            }
+        }
+        public string ImageRightGridRowSpan {
+            get { return BaseView.ImageRightGridRowSpan; }
+            set
+            {
+                if ( BaseView.ImageRightGridRowSpan != value ) {
+                    BaseView.ImageRightGridRowSpan = value;
+                    OnPropertyChanged ("ImageRightGridRowSpan");
+                }
+            }
+        }
+        public string ImageRightGridColumnSpan {
+            get { return BaseView.ImageRightGridColumnSpan; }
+            set
+            {
+                if ( BaseView.ImageRightGridColumnSpan != value ) {
+                    BaseView.ImageRightGridColumnSpan = value;
+                    OnPropertyChanged ("ImageRightGridColumnSpan");
+                }
+            }
+        }
+        public string AnimationLeft {
+            get { return BaseView.AnimationLeft; }
+            set
+            {
+                if ( BaseView.AnimationLeft != value ) {
+                    BaseView.AnimationLeft = value;
+                    OnPropertyChanged ("AnimationLeft");
+                }
+            }
+        }
+        public string AnimationRight {
+            get { return BaseView.AnimationRight; }
+            set
+            {
+                if ( BaseView.AnimationRight != value ) {
+                    BaseView.AnimationRight = value;
+                    OnPropertyChanged ("AnimationRight");
+                }
+            }
+        }
+        public string AnimationLeftRowSpan {
+            get { return BaseView.AnimationLeftRowSpan; }
+            set
+            {
+                if ( BaseView.AnimationLeftRowSpan != value ) {
+                    BaseView.AnimationLeftRowSpan = value;
+                    OnPropertyChanged ("AnimationLeftRowSpan");
+                }
+            }
+        }
+        public string AnimationLeftColumnSpan {
+            get { return BaseView.AnimationLeftColumnSpan; }
+            set
+            {
+                if ( BaseView.AnimationLeftColumnSpan != value ) {
+                    BaseView.AnimationLeftColumnSpan = value;
+                    OnPropertyChanged ("AnimationLeftColumnSpan");
+                }
+            }
+        }
+        public string AnimationRightGridRowSpan {
+            get { return BaseView.AnimationRightGridRowSpan; }
+            set
+            {
+                if ( BaseView.AnimationRightGridRowSpan != value ) {
+                    BaseView.AnimationRightGridRowSpan = value;
+                    OnPropertyChanged ("AnimationRightGridRowSpan");
+                }
+            }
+        }
+        public string AnimationRightGridColumnSpan {
+            get { return BaseView.AnimationRightGridColumnSpan; }
+            set
+            {
+                if ( BaseView.AnimationRightGridColumnSpan != value ) {
+                    BaseView.AnimationRightGridColumnSpan = value;
+                    OnPropertyChanged ("AnimationRightGridColumnSpan");
+                }
+            }
+        }
+        public string Text {
+            get { return BaseView.Text; }
+            set
+            {
+                if ( BaseView.Text != value ) {
+                    BaseView.Text = value;
+                    OnPropertyChanged ("Text");
+                }
+            }
+        }
+        public string NavigationImageLeft {
+            get { return BaseView.NavigationImageLeft; }
+            set
+            {
+                if ( BaseView.NavigationImageLeft != value ) {
+                    BaseView.NavigationImageLeft = value;
+                    OnPropertyChanged ("NavigationImageLeft");
+                }
+            }
+        }
+        public string NavigationImageRight {
+            get { return BaseView.NavigationImageRight; }
+            set
+            {
+                if ( BaseView.NavigationImageRight != value ) {
+                    BaseView.NavigationImageRight = value;
+                    OnPropertyChanged ("NavigationImageRight");
+                }
+            }
+        }
+        public string NavigationLeftButtonIsEnabled {
+            get { return BaseView.NavigationLeftButtonIsEnabled; }
+            set
+            {
+                if ( BaseView.NavigationLeftButtonIsEnabled != value ) {
+                    BaseView.NavigationLeftButtonIsEnabled = value;
+                    OnPropertyChanged ("NavigationLeftButtonIsEnabled");
+                }
+            }
+        }
+        public string NavigationRightButtonIsEnabled {
+            get { return BaseView.NavigationRightButtonIsEnabled; }
+            set
+            {
+                if ( BaseView.NavigationRightButtonIsEnabled != value ) {
+                    BaseView.NavigationRightButtonIsEnabled = value;
+                    OnPropertyChanged ("NavigationRightButtonIsEnabled");
+                }
+            }
+        }
+
+        protected virtual void NextScene()
+        {
+            //BaseView.GetBlank();
+            
+        }
+        protected virtual  void BackScene()
+        {
+            NextView?.Invoke ();
+        }                         
+
+        protected virtual void AcelerometrMove()
+        {
+            
+        }
+        protected virtual void OnPropertyChanged(string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+}

@@ -40,6 +40,9 @@
     </Compile>
     <Compile Include="Interfaces\IAudio.cs" />
     <Compile Include="Interfaces\PlaySound.cs" />
+    <Compile Include="Model\BaseView.cs" />
+    <Compile Include="Model\BlankBaseView.cs" />
+    <Compile Include="Properties\Annotations1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scene1\FisrtPage.xaml.cs">
       <DependentUpon>FisrtPage.xaml</DependentUpon>
@@ -53,8 +56,13 @@
     <Compile Include="Scene1\ThredPage.xaml.cs">
       <DependentUpon>ThredPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\FirstDream\FirstSceneViewModel.cs" />
     <Compile Include="Views\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -72,8 +80,40 @@
       <HintPath>..\..\packages\Xam.Plugin.DeviceMotion.1.1.2\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\DeviceMotion.Plugin.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FFImageLoading, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.2.2.9\lib\portable-net45+win8+wpa81+wp8\FFImageLoading.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.Forms.2.2.9\lib\portable-net45+win8+wpa81+wp8\FFImageLoading.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.2.2.9\lib\portable-net45+win8+wpa81+wp8\FFImageLoading.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FFImageLoading.Svg.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.Svg.Forms.2.2.9\lib\portable-net45+win8+wpa81+wp8\FFImageLoading.Svg.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FFImageLoading.Svg.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.Svg.2.2.9\lib\portable-net45+win8+wpa81+wp8\FFImageLoading.Svg.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Lottie.Forms, Version=1.0.6295.35001, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Com.Airbnb.Xamarin.Forms.Lottie.1.5.2\lib\portable-net45+wp8+win+wpa81+dnxcore50\Lottie.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.NotificationHubs, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Azure.Management.NotificationHubs.2.2.0-preview\lib\netstandard1.1\Microsoft.Azure.Management.NotificationHubs.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Rest.ClientRuntime.2.3.5\lib\netstandard1.1\Microsoft.Rest.ClientRuntime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime.Azure, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Rest.ClientRuntime.Azure.3.3.5\lib\netstandard1.1\Microsoft.Rest.ClientRuntime.Azure.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.WindowsAzure.Mobile, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -84,8 +124,16 @@
       <HintPath>..\..\packages\Microsoft.Azure.Mobile.Client.SQLiteStore.3.1.0\lib\portable-win+net45+wp8+wpa81+monotouch10+monoandroid10+xamarinios10\Microsoft.WindowsAzure.Mobile.SQLiteStore.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="MvvmHelpers, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Refractored.MvvmHelpers.1.2.2\lib\portable-net45+wp80+win8+wpa81\MvvmHelpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SkiaSharp, Version=1.56.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SkiaSharp.1.56.1\lib\portable-net45+win8+wpa81+wp8\SkiaSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SQLitePCLRaw.batteries_green, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a84b7dcfb1391f7f, processorArchitecture=MSIL">
@@ -106,6 +154,10 @@
     </Reference>
     <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8+wpa81\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.CarouselView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -157,6 +209,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Scene1\FourPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\MainView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
