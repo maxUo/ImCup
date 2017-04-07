@@ -17,6 +17,7 @@ namespace ImCup.ViewModel {
         public event PropertyChangedEventHandler PropertyChanged;
         public Action<BaseViewModel> NextView;
         public Action GoBack;
+        public Action PlayLeftAnimation;
 
         public BaseViewModel()
         {
@@ -29,7 +30,35 @@ namespace ImCup.ViewModel {
         protected virtual void Current_SensorValueChanged( object sender, SensorValueChangedEventArgs e ) {
             
         }
-        
+
+        protected async void PlaySlideAnim()
+        {
+            BaseView.GetBlank();
+
+            ImageFon = ImageFon;
+            ImageFonGridColumnSpan = "4";
+            ImageFonGridRowSpan = "2";
+
+            Text = "Идет загрузка...";
+
+            AnimationLeft = "loading_semicircle.json";
+            AnimationLeftLoop = false;
+            AnimationLeftAutoPlay = true;
+
+            AnimationLeftColumnSpan = "4";
+            AnimationLeftRowSpan = "2";
+
+            NavigationImageLeft = "backActive.png";
+            NavigationImageRight = "nextActive.png";
+
+            await Task.Delay(1500);
+            OnCreate();
+        }
+
+        protected virtual void OnCreate()
+        {
+            
+        }
         public BaseView BaseView { get; set; }
         public ICommand NextSceneCommand { set; get; }
         public ICommand BackSceneCommand { set; get; }
@@ -287,7 +316,7 @@ namespace ImCup.ViewModel {
 
         protected virtual void NextScene()
         {
-            NextView?.Invoke(new BaseViewModel());
+
         }
         protected virtual  void BackScene()
         {

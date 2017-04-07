@@ -37,6 +37,7 @@
             Grid.ColumnSpan="{Binding ImageRightGridColumnSpan}"
             Source="{Binding ImageRight}" />
         <lottie:AnimationView
+            x:Name="AnimationLeftView"
             AutoPlay="{Binding AnimationLeftAutoPlay}"
             Loop="{Binding AnimationLeftLoop}"
             Grid.Row="0"

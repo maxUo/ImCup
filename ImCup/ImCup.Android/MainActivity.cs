@@ -18,6 +18,13 @@ namespace ImCup.Droid {
 
             base.OnCreate (bundle);
 
+            // Initialization for Azure Mobile Apps
+            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+            // This MobileServiceClient has been configured to communicate with the Azure Mobile App and
+            // Azure Gateway using the application url. You're all set to start working with your Mobile App!
+            Microsoft.WindowsAzure.MobileServices.MobileServiceClient imaginationCupClient = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient(
+            "http://imaginationcup.azurewebsites.net");
+
             global::Xamarin.Forms.Forms.Init (this, bundle);
 
             //RequestWindowFeature (WindowFeatures.NoTitle);
@@ -28,6 +35,7 @@ namespace ImCup.Droid {
             EngagementConfiguration engagementConfiguration = new EngagementConfiguration ();
             engagementConfiguration.ConnectionString = "Endpoint=imcup.device.mobileengagement.windows.net;SdkKey=f55890b27cd5a2afcb0c46478fe31eb5;AppId=nei000342";
             EngagementAgent.Init (engagementConfiguration);
+            EngagementAgent.SendEvent("Happy");
         }
         protected override void OnResume() {
             EngagementAgent.StartActivity (EngagementAgentUtils.BuildEngagementActivityName (Java.Lang.Class.FromType (this.GetType ())), null);

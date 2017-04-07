@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "19281040683",
+    "firebase_url": "https://imcup-995e7.firebaseio.com",
+    "project_id": "imcup-995e7",
+    "storage_bucket": "imcup-995e7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19281040683:android:291b211f45d127bd",
+        "android_client_info": {
+          "package_name": "com.companyname.ImCup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "19281040683-r1ea6lf3s4f4bdt7gp0spng3o78m2usl.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "19281040683-57hssoqio37n1kdvjipt6bc0sc9t39dt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC35sAVmHZZsPkF5H4b50MBTzT9AlwjV1E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

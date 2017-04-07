@@ -56,6 +56,7 @@
     <Compile Include="Scene1\ThredPage.xaml.cs">
       <DependentUpon>ThredPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AnimationSlide.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\FirstDream\SecondSceneViewModel.cs" />
     <Compile Include="ViewModel\FirstDream\FirstSceneViewModel.cs" />

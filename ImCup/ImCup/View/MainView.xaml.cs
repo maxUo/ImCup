@@ -18,7 +18,14 @@ namespace ImCup.View {
             this.BaseViewModel = model;
             this.BindingContext = model;
             model.NextView = GetNextProperty;
-        }   
+            model.PlayLeftAnimation = PlayLeftAnimation;
+        }
+
+        private  void PlayLeftAnimation()
+        {
+            AnimationLeftView.Play();
+        }
+
         public BaseViewModel BaseViewModel { get; set; }
         private void GetNextProperty(BaseViewModel viewModel)
         {
