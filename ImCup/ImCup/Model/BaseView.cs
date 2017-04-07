@@ -23,6 +23,11 @@ namespace ImCup.Model {
             AnimationRightGridColumnSpan = "1";
             AnimationRightGridRowSpan = "1";
 
+            AnimationLeftAutoPlay = true;
+            AnimationRightAutoPlay = true;
+            AnimationLeftLoop = false;
+            AnimationRightLoop = false;
+
             ImageLeft = "";
             ImageLeftGridColumnSpan = "1";
             ImageLeftGridRowSpan = "1";
@@ -60,6 +65,12 @@ namespace ImCup.Model {
 
         public string AnimationRightGridRowSpan { get; set; }
         public string AnimationRightGridColumnSpan { get; set; }
+
+        //Проигрывание Анимации
+        public bool AnimationLeftAutoPlay { get; set; }
+        public bool AnimationLeftLoop { get; set; }
+        public bool AnimationRightAutoPlay { get; set; }
+        public bool AnimationRightLoop { get; set; }
         //Смещение картинок
 
         //Текст на панели снизу

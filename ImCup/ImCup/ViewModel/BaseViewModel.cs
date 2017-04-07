@@ -15,7 +15,8 @@ using Xamarin.Forms;
 namespace ImCup.ViewModel {
     public class BaseViewModel: INotifyPropertyChanged {
         public event PropertyChangedEventHandler PropertyChanged;
-        public Action NextView;
+        public Action<BaseViewModel> NextView;
+        public Action GoBack;
 
         public BaseViewModel()
         {
@@ -34,6 +35,54 @@ namespace ImCup.ViewModel {
         public ICommand BackSceneCommand { set; get; }
 
         #region Обвязка на поля базовой модели
+        public bool AnimationLeftAutoPlay
+        {
+            get { return BaseView.AnimationLeftAutoPlay; }
+            set
+            {
+                if (BaseView.AnimationLeftAutoPlay != value)
+                {
+                    BaseView.AnimationLeftAutoPlay = value;
+                    OnPropertyChanged("AnimationLeftAutoPlay");
+                }
+            }
+        }
+        public bool AnimationLeftLoop
+        {
+            get { return BaseView.AnimationLeftLoop; }
+            set
+            {
+                if (BaseView.AnimationLeftLoop != value)
+                {
+                    BaseView.AnimationLeftLoop = value;
+                    OnPropertyChanged("AnimationLeftLoop");
+                }
+            }
+        }
+        public bool AnimationRightAutoPlay
+        {
+            get { return BaseView.AnimationRightAutoPlay; }
+            set
+            {
+                if (BaseView.AnimationRightAutoPlay != value)
+                {
+                    BaseView.AnimationRightAutoPlay = value;
+                    OnPropertyChanged("AnimationRightAutoPlay");
+                }
+            }
+        }
+        public bool AnimationRightLoop
+        {
+            get { return BaseView.AnimationRightLoop; }
+            set
+            {
+                if (BaseView.AnimationRightLoop != value)
+                {
+                    BaseView.AnimationRightLoop = value;
+                    OnPropertyChanged("AnimationRightLoop");
+                }
+            }
+        }
         public string ImageFon
         {
             get { return BaseView.ImageFon; }
@@ -238,13 +287,16 @@ namespace ImCup.ViewModel {
 
         protected virtual void NextScene()
         {
-            //BaseView.GetBlank();
-            
+            NextView?.Invoke(new BaseViewModel());
         }
         protected virtual  void BackScene()
         {
-            NextView?.Invoke ();
-        }                         
+            
+        }
+        protected void ExitMove()
+        {
+            GoBack?.Invoke();
+        }
 
         protected virtual void AcelerometrMove()
         {

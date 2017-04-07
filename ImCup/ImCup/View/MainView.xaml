@@ -37,12 +37,16 @@
             Grid.ColumnSpan="{Binding ImageRightGridColumnSpan}"
             Source="{Binding ImageRight}" />
         <lottie:AnimationView
+            AutoPlay="{Binding AnimationLeftAutoPlay}"
+            Loop="{Binding AnimationLeftLoop}"
             Grid.Row="0"
             Grid.RowSpan="{Binding AnimationLeftRowSpan}"
             Grid.Column="0"
             Grid.ColumnSpan="{Binding AnimationLeftColumnSpan}"
             Animation="{Binding AnimationLeft}" />
         <lottie:AnimationView
+            AutoPlay="{Binding AnimationRightAutoPlay}"
+            Loop="{Binding AnimationRightLoop}"
             Grid.Row="0"
             Grid.RowSpan="{Binding AnimationRightGridRowSpan}"
             Grid.Column="2"

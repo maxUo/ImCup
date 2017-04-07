@@ -20,10 +20,11 @@ namespace ImCup.View {
             model.NextView = GetNextProperty;
         }   
         public BaseViewModel BaseViewModel { get; set; }
-        private void GetNextProperty()
+        private void GetNextProperty(BaseViewModel viewModel)
         {
-          //  _model.NewView();
-             BindingContext = BaseViewModel;
+            //  _model.NewView();
+            BaseViewModel = viewModel;
+            BindingContext = viewModel;
         }
     }
 }
