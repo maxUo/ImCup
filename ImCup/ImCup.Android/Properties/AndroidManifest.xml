@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.companyname.ImCup" android:versionCode="1" android:versionName="1.0" android:installLocation="internalOnly">
-	<uses-sdk />
+	<uses-sdk android:minSdkVersion="23" android:targetSdkVersion="25" />
 	<uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
 	<uses-permission android:name="android.permission.DELETE_CACHE_FILES" />
 	<uses-permission android:name="android.permission.VIBRATE" />

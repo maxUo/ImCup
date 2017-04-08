@@ -63,6 +63,14 @@
             Grid.Column="3"
             Aspect="AspectFit"
             Source="{Binding NavigationImageRight}" />
+        <BoxView
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+                BackgroundColor="White"
+                HorizontalOptions="FillAndExpand"
+                Opacity="0.4"
+                VerticalOptions="FillAndExpand" />
         <Button
             Grid.Row="1"
             Grid.Column="0"
@@ -79,13 +87,16 @@
             IsEnabled="{Binding NavigationRightButtonIsEnabled}"
             Opacity="0"
             VerticalOptions="FillAndExpand" />
-        <Label
+        <ScrollView 
             Grid.Row="1"
             Grid.Column="1"
             Grid.ColumnSpan="2"
-            FontSize="26"
-            HorizontalOptions="FillAndExpand"
-            HorizontalTextAlignment="Center"
-            Text="{Binding Text}" />
+            HorizontalOptions="FillAndExpand">
+                <Label
+                FontSize="26"
+                HorizontalTextAlignment="Center"
+                Text="{Binding Text}" />
+        </ScrollView>
+        
     </Grid>
 </ContentPage>

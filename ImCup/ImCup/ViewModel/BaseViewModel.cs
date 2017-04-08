@@ -33,8 +33,6 @@ namespace ImCup.ViewModel {
 
         protected async void PlaySlideAnim()
         {
-            BaseView.GetBlank();
-
             ImageFon = ImageFon;
             ImageFonGridColumnSpan = "4";
             ImageFonGridRowSpan = "2";
@@ -44,6 +42,8 @@ namespace ImCup.ViewModel {
             AnimationLeft = "loading_semicircle.json";
             AnimationLeftLoop = false;
             AnimationLeftAutoPlay = true;
+
+            PlayLeftAnimation?.Invoke();
 
             AnimationLeftColumnSpan = "4";
             AnimationLeftRowSpan = "2";

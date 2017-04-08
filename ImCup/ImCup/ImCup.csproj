@@ -56,10 +56,10 @@
     <Compile Include="Scene1\ThredPage.xaml.cs">
       <DependentUpon>ThredPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\AnimationSlide.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\FirstDream\SecondSceneViewModel.cs" />
     <Compile Include="ViewModel\FirstDream\FirstSceneViewModel.cs" />
+    <Compile Include="ViewModel\FirstDream\ThredSceneViewModel.cs" />
     <Compile Include="Views\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>

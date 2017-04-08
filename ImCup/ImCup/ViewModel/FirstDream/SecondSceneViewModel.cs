@@ -13,7 +13,9 @@ namespace ImCup.ViewModel.FirstDream {
     public class SecondSceneViewModel : BaseViewModel {
         public SecondSceneViewModel()
         {
-            base.PlaySlideAnim();
+            BaseView.GetBlank();
+            ImageFon = "house.png";
+            PlaySlideAnim();
         }
 
         protected override void OnCreate()
@@ -24,7 +26,7 @@ namespace ImCup.ViewModel.FirstDream {
                 "решил отправиться на поиски сокровищ.\n\r"+
                 "Он двинулся в путь, взяв в дорогу\n\r"+
                 "немного провизии, карту,\n\r" +
-                 "компас и подзорную трубу.\n\r";
+                "компас и подзорную трубу.\n\r";
 
             ImageFon = "road1.png";
             ImageFonGridColumnSpan = "4";
@@ -36,8 +38,16 @@ namespace ImCup.ViewModel.FirstDream {
             AnimationLeftColumnSpan = "4";
             AnimationLeftRowSpan = "2";
 
+            NavigationLeftButtonIsEnabled = "true";
+            NavigationRightButtonIsEnabled = "true";
+
             NavigationImageLeft = "backActive.png";
             NavigationImageRight = "nextActive.png";
+        }
+
+        protected override void NextScene()
+        {
+            NextView(new ThredSceneViewModel());
         }
 
         protected override void BackScene()

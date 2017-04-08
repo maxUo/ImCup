@@ -19,6 +19,7 @@ namespace ImCup.View {
             this.BindingContext = model;
             model.NextView = GetNextProperty;
             model.PlayLeftAnimation = PlayLeftAnimation;
+            model.GoBack = () => Navigation.PopModalAsync();
         }
 
         private  void PlayLeftAnimation()
@@ -30,8 +31,11 @@ namespace ImCup.View {
         private void GetNextProperty(BaseViewModel viewModel)
         {
             //  _model.NewView();
-            BaseViewModel = viewModel;
-            BindingContext = viewModel;
+            this.BaseViewModel = viewModel;
+            this.BindingContext = viewModel;
+            viewModel.NextView = GetNextProperty;
+            viewModel.PlayLeftAnimation = PlayLeftAnimation;
+            viewModel.GoBack = () => Navigation.PopModalAsync();
         }
     }
 }

@@ -38,8 +38,7 @@ namespace ImCup.Droid
             Log.Verbose(MyBroadcastReceiver.TAG, "GCM Registered: " + registrationId);
             RegistrationID = registrationId;
 
-            createNotification("PushHandlerService-GCM Registered...",
-                                "The device has been Registered!");
+            //createNotification("PushHandlerService-GCM Registered...","The device has been Registered!");
 
             Hub = new NotificationHub(Constants.NotificationHubName, Constants.ListenConnectionString,
                                         context);
@@ -108,7 +107,7 @@ namespace ImCup.Droid
 
             //Show the notification
             notificationManager.Notify(1, notification);
-            dialogNotify(title, desc);
+            //dialogNotify(title, desc);
         }
 
         protected void dialogNotify(String title, String message)
@@ -129,7 +128,7 @@ namespace ImCup.Droid
         {
             Log.Verbose(MyBroadcastReceiver.TAG, "GCM Unregistered: " + registrationId);
 
-            createNotification("GCM Unregistered...", "The device has been unregistered!");
+            //createNotification("GCM Unregistered...", "The device has been unregistered!");
         }
 
         protected override bool OnRecoverableError(Context context, string errorId)

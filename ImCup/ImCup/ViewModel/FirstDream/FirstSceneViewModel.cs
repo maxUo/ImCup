@@ -13,6 +13,13 @@ namespace ImCup.ViewModel.FirstDream {
     public class FirstSceneViewModel: BaseViewModel {
         public FirstSceneViewModel()
         {
+           BaseView.GetBlank();
+           ImageFon = "house.png";
+           PlaySlideAnim();
+        }
+
+        protected override void OnCreate()
+        {
             base.BaseView.GetBlank();
 
             Text = "В Солнечном Краю жил-был Панда-По.\n\r" +
@@ -20,7 +27,6 @@ namespace ImCup.ViewModel.FirstDream {
                    "сокрытых в пещере на вершине горы\n\r" +
                    "Когнито где-то на севере.\n\r" +
                    "";
-
             ImageFon = "house.png";
             ImageFonGridColumnSpan = "4";
             ImageFonGridRowSpan = "2";
@@ -35,22 +41,16 @@ namespace ImCup.ViewModel.FirstDream {
             NavigationLeftButtonIsEnabled = "true";
             NavigationRightButtonIsEnabled = "true";
 
-            AnimationLeft = "";
-            AnimationLeftColumnSpan = "1";
-            AnimationLeftRowSpan = "1";
-            AnimationRight = "";
-            AnimationRightGridColumnSpan = "1";
-            AnimationRightGridRowSpan = "1";
-
-            ImageRight = "";
-            ImageRightGridColumnSpan = "1";
-            ImageRightGridRowSpan = "1";
-
         }
-        
+
         protected override void NextScene()
         {
             NextView(new SecondSceneViewModel());
+        }
+
+        protected override void BackScene()
+        {
+            GoBack?.Invoke();
         }
     }
 }
