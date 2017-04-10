@@ -3,16 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.WindowsAzure.MobileServices;
+using Xamarin.Forms;
 
 namespace ImCup.ViewModel.FirstDream
 {
     public class ThredSceneViewModel:BaseViewModel
     {
+        TodoItemManager manager;
         public ThredSceneViewModel()
         {
             BaseView.GetBlank();
-            ImageFon = (new SecondSceneViewModel()).ImageFon;
+            ImageFon = "road1.png";
             PlaySlideAnim();
+
+            manager = TodoItemManager.DefaultManager;
+
+            var todo = new TodoItem { Name = "Ale"};
+            AddItem(todo);
+            //var client = new MobileServiceClient("http://imaginationcup.azurewebsites.net");
+
+
+        }
+        private async void AddItem(TodoItem item)
+        {
+            await manager.SaveTaskAsync(item);
         }
         protected override void OnCreate()
         {

@@ -37,7 +37,7 @@ namespace ImCup.ViewModel.FirstDream {
             AnimationLeftLoop = false;
             AnimationLeftColumnSpan = "4";
             AnimationLeftRowSpan = "2";
-
+            
             NavigationLeftButtonIsEnabled = "true";
             NavigationRightButtonIsEnabled = "true";
 

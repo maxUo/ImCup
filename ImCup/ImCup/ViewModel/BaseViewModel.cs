@@ -40,10 +40,10 @@ namespace ImCup.ViewModel {
             Text = "Идет загрузка...";
 
             AnimationLeft = "loading_semicircle.json";
-            AnimationLeftLoop = false;
             AnimationLeftAutoPlay = true;
+            AnimationLeftLoop = false;
 
-            PlayLeftAnimation?.Invoke();
+            //PlayLeftAnimation?.Invoke();
 
             AnimationLeftColumnSpan = "4";
             AnimationLeftRowSpan = "2";
