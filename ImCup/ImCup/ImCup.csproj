@@ -62,10 +62,14 @@
     </Compile>
     <Compile Include="TodoItem.cs" />
     <Compile Include="TodoItemManager.cs" />
+    <Compile Include="ViewModel\BaseMenuPageViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\FirstDream\FourthSceneViewModel.cs" />
     <Compile Include="ViewModel\FirstDream\SecondSceneViewModel.cs" />
     <Compile Include="ViewModel\FirstDream\FirstSceneViewModel.cs" />
     <Compile Include="ViewModel\FirstDream\ThredSceneViewModel.cs" />
+    <Compile Include="ViewModel\MenuPages\FirstDreamViewModel.cs" />
+    <Compile Include="ViewModel\MenuPages\RecognitionPageViewModel.cs" />
     <Compile Include="Views\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>

@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 using ImCup.Interfaces;
 using ImCup.Model;
 using ImCup.View;
+using ImCup.ViewModel;
 using ImCup.ViewModel.FirstDream;
+using ImCup.ViewModel.MenuPages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,30 +18,39 @@ namespace ImCup.Views {
     public partial class MenuPage : ContentPage
     {
         //private ObservableCollection<ViewDataObject> _lViewModel;
+        private ObservableCollection<BaseMenuPageViewModel> _viewModels;
         public MenuPage() {
             InitializeComponent ();
+            ViewModels = new ObservableCollection<BaseMenuPageViewModel>();
 
-            LViewModel = new ObservableCollection<ViewDataObject> ()
-            {
-                new ViewDataObject() {Text = "Сказки", ImageSource = "iconChessBorder.png"},
-                new ViewDataObject() {Text = "", ImageSource = "iconV.png"},
-                new ViewDataObject() {Text = "", ImageSource = "iconV.png"}
-            };
-            DependencyService.Get<IAudio>().PlayWavFile("a");
+            ViewModels.Add(new FirstDreamViewModel());
+            ViewModels[0].ViewDream = ShowDream;
+            ViewModels.Add(new RecognitionPageViewModel());
+            ViewModels[1].RecognitionPage = ShowRecognition;
+
+           // DependencyService.Get<IAudio>().PlayWavFile("a");
             BindingContext = this;
         }
 
-        public ObservableCollection<ViewDataObject> LViewModel { get; set; }
-
-        private async void Button_OnClicked( object sender, EventArgs e )
+        public ObservableCollection<BaseMenuPageViewModel> ViewModels
         {
-            await Navigation.PushModalAsync(new MainView (new FirstSceneViewModel ()));
+            get { return _viewModels; }
+            set
+            {
+                if (value != null && _viewModels != value)
+                {
+                    _viewModels = value;
+                }
+            }
         }
-    }
 
-    public class ViewDataObject
-    {
-        public string ImageSource { get; set; }
-        public string Text { get; set; }
+        private async void ShowRecognition()
+        {
+            await Navigation.PushModalAsync(new RecognitionPage());
+        }
+        private async void ShowDream(BaseViewModel viewModel)
+        {
+            await Navigation.PushModalAsync(new MainView (viewModel));
+        }
     }
 }

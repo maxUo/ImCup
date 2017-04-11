@@ -18,17 +18,27 @@ namespace ImCup.ViewModel {
         public Action<BaseViewModel> NextView;
         public Action GoBack;
         public Action PlayLeftAnimation;
-
+        protected bool _isUsed;
         public BaseViewModel()
         {
+            _isUsed = false;
             BaseView = new BaseView();
             NextSceneCommand = new Command(NextScene);
             BackSceneCommand = new Command(BackScene);
+
+            FirstChoiceButtonCommand = new Command(FirstChoiceCommmandButton);
+            SecondChoiceButtonCommand = new Command(SecondChoiceCommmandButton);
+            ThirdChoiceButtonCommand = new Command(ThirdChoiceCommmandButton);
+
             CrossDeviceMotion.Current.Start (MotionSensorType.Accelerometer);
             CrossDeviceMotion.Current.SensorValueChanged += Current_SensorValueChanged;
         }
         protected virtual void Current_SensorValueChanged( object sender, SensorValueChangedEventArgs e ) {
-            
+            if (!_isUsed && (((MotionVector) e.Value).Z < 0 || ((MotionVector) e.Value).Z > 20))
+            {
+                _isUsed = true;
+                AcelerometrMove();
+            }
         }
 
         protected async void PlaySlideAnim()
@@ -63,7 +73,48 @@ namespace ImCup.ViewModel {
         public ICommand NextSceneCommand { set; get; }
         public ICommand BackSceneCommand { set; get; }
 
+        public ICommand FirstChoiceButtonCommand { get; set; }
+        public ICommand SecondChoiceButtonCommand { get; set; }
+        public ICommand ThirdChoiceButtonCommand { get; set; }
+
         #region Обвязка на поля базовой модели
+        public string FirstChoiceImage
+        {
+            get { return BaseView.FirstChoiceImage; }
+            set
+            {
+                if (BaseView.FirstChoiceImage != value)
+                {
+                    BaseView.FirstChoiceImage = value;
+                    OnPropertyChanged("FirstChoiceImage");
+                }
+            }
+        }
+        public string SecondChoiceImage
+        {
+            get { return BaseView.SecondChoiceImage; }
+            set
+            {
+                if (BaseView.SecondChoiceImage != value)
+                {
+                    BaseView.SecondChoiceImage = value;
+                    OnPropertyChanged("SecondChoiceImage");
+                }
+            }
+        }
+        public string ThirdChoiceImage
+        {
+            get { return BaseView.ThirdChoiceImage; }
+            set
+            {
+                if (BaseView.ThirdChoiceImage != value)
+                {
+                    BaseView.ThirdChoiceImage = value;
+                    OnPropertyChanged("ThirdChoiceImage");
+                }
+            }
+        }
+
         public bool AnimationLeftAutoPlay
         {
             get { return BaseView.AnimationLeftAutoPlay; }
@@ -314,6 +365,18 @@ namespace ImCup.ViewModel {
         }
         #endregion
 
+        protected virtual void FirstChoiceCommmandButton()
+        {
+            
+        }
+        protected virtual void SecondChoiceCommmandButton()
+        {
+
+        }
+        protected virtual void ThirdChoiceCommmandButton()
+        {
+
+        }
         protected virtual void NextScene()
         {
 

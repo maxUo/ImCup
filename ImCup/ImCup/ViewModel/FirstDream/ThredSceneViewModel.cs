@@ -50,11 +50,23 @@ namespace ImCup.ViewModel.FirstDream
 
             NavigationImageLeft = "backActive.png";
             NavigationImageRight = "nextNoACtive.png";
+
+            FirstChoiceImage = "compas.png";
+            SecondChoiceImage = "Tube.png";
+            ThirdChoiceImage = "BottleMap.png";
+
+
         }
 
         protected override void BackScene()
         {
             NextView(new SecondSceneViewModel());
+        }
+
+        protected override void ThirdChoiceCommmandButton()
+        {
+            //base.ThirdChoiceCommmandButton();
+            NextView(new FourthSceneViewModel());
         }
     }
 }

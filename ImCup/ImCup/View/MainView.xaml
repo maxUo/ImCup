@@ -53,6 +53,42 @@
             Grid.Column="2"
             Grid.ColumnSpan="{Binding AnimationRightGridColumnSpan}"
             Animation="{Binding AnimationRight}" />
+        <Grid
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Button Command="{Binding FirstChoiceButtonCommand}"
+                        Opacity="0" HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"/>
+                <ffimage:CachedImage
+                    Scale="0.7"
+                    Source="{Binding FirstChoiceImage}"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Button Command="{Binding SecondChoiceButtonCommand}"
+                        Opacity="0" HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"/>
+                <ffimage:CachedImage
+                    Scale="0.7"
+                    Source="{Binding SecondChoiceImage}"/>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Button Command="{Binding ThirdChoiceButtonCommand}"
+                        Opacity="0" HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"/>
+                <ffimage:CachedImage
+                    Scale="0.7"
+                    Source="{Binding ThirdChoiceImage}"/>
+            </Grid>
+        </Grid>
         <ffimage:CachedImage
             Grid.Row="1"
             Grid.Column="0"

@@ -13,10 +13,11 @@ namespace ImCup.ViewModel.FirstDream {
     public class FirstSceneViewModel: BaseViewModel {
         public FirstSceneViewModel()
         {
+            BaseView.GetBlank();
           /* BaseView.GetBlank();
            ImageFon = "house.png";
            PlaySlideAnim();*/
-           this.OnCreate();
+           PlaySlideAnim();
         }
 
         protected override void OnCreate()

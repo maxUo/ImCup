@@ -40,6 +40,10 @@ namespace ImCup.Model {
             NavigationImageRight = "";
             NavigationLeftButtonIsEnabled = "false";
             NavigationRightButtonIsEnabled = "false";
+
+            FirstChoiceImage = "";
+            SecondChoiceImage = "";
+            ThirdChoiceImage = "";
         }
         //Сурсы к картинкам
         public string ImageFon { get; set; }
@@ -82,5 +86,9 @@ namespace ImCup.Model {
         //Доступность кнопок навигации
         public string NavigationLeftButtonIsEnabled { get; set; }
         public string NavigationRightButtonIsEnabled { get; set; }
+        //Навигация
+        public string FirstChoiceImage { get; set; }
+        public string SecondChoiceImage { get; set; }
+        public string ThirdChoiceImage { get; set; }
     }
 }

@@ -4,7 +4,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
-    xmlns:forms1="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+    xmlns:forms1="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    BindingContext="BaseMenuPageViewModel">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35*" />
@@ -16,27 +17,14 @@
             Aspect="AspectFill"
             Opacity="1"
             Source="menu720.png" />
-        <forms:CarouselView Grid.Row="2" ItemsSource="{Binding LViewModel}">
+        <forms:CarouselView Grid.Row="2" ItemsSource="{Binding ViewModels}">
             <forms:CarouselView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <Image Aspect="AspectFit" Source="{Binding ImageSource}" />
-                        <Button
-                            Grid.Row="0"
-                            Clicked="Button_OnClicked"
-                            HorizontalOptions="FillAndExpand"
-                            Opacity="0"
-                            VerticalOptions="FillAndExpand" />
-                        <Label
-                            Grid.Row="1"
-                            FontSize="Large"
-                            HorizontalTextAlignment="Center"
-                            Text="{Binding}"
-                            TextColor="Accent" />
+                        <forms1:CachedImage
+                            Aspect="AspectFit"
+                            Source="{Binding ImageSource}"/>
+                        <Button Opacity="0" Command="{Binding ButtonShowCommand}"></Button>
                     </Grid>
                 </DataTemplate>
             </forms:CarouselView.ItemTemplate>
