@@ -15,18 +15,20 @@ namespace ImCup.Model {
             ImageFonGridColumnSpan = "1";
             ImageFonGridRowSpan = "1";
 
-            AnimationLeft = "";
+            AnimationLeft = "progress_bar.json";
             AnimationLeftColumnSpan = "1";
             AnimationLeftRowSpan = "1";
+            AnimationLeftAutoPlay = true;
+            AnimationLeftLoop = false;
+            AnimationLeftIsVisible = false;
 
-            AnimationRight = "";
+
+            AnimationRight = "progress_bar.json";
+            AnimationRightLoop = false;
+            AnimationRightAutoPlay = true;
             AnimationRightGridColumnSpan = "1";
             AnimationRightGridRowSpan = "1";
-
-            AnimationLeftAutoPlay = true;
-            AnimationRightAutoPlay = true;
-            AnimationLeftLoop = false;
-            AnimationRightLoop = false;
+            AnimationRightIsVisible = false;
 
             ImageLeft = "";
             ImageLeftGridColumnSpan = "1";
@@ -67,6 +69,8 @@ namespace ImCup.Model {
         public string AnimationLeftRowSpan { get; set; }
         public string AnimationLeftColumnSpan { get; set; }
 
+        public bool AnimationLeftIsVisible { get; set; }
+        public bool AnimationRightIsVisible { get; set; }
         public string AnimationRightGridRowSpan { get; set; }
         public string AnimationRightGridColumnSpan { get; set; }
 

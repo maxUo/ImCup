@@ -52,6 +52,8 @@ namespace ImCup.ViewModel {
             AnimationLeft = "loading_semicircle.json";
             AnimationLeftAutoPlay = true;
             AnimationLeftLoop = false;
+            AnimationLeftIsVisible = true;
+            //AnimationLef
 
             //PlayLeftAnimation?.Invoke();
 
@@ -114,7 +116,31 @@ namespace ImCup.ViewModel {
                 }
             }
         }
-
+        //AnimationLeftIsVisible
+        public bool AnimationLeftIsVisible
+        {
+            get { return BaseView.AnimationLeftIsVisible; }
+            set
+            {
+                if (BaseView.AnimationLeftIsVisible != value)
+                {
+                    BaseView.AnimationLeftIsVisible = value;
+                    OnPropertyChanged("AnimationLeftIsVisible");
+                }
+            }
+        }
+        public bool AnimationRightIsVisible
+        {
+            get { return BaseView.AnimationRightIsVisible; }
+            set
+            {
+                if (BaseView.AnimationRightIsVisible != value)
+                {
+                    BaseView.AnimationRightIsVisible = value;
+                    OnPropertyChanged("AnimationRightIsVisible");
+                }
+            }
+        }
         public bool AnimationLeftAutoPlay
         {
             get { return BaseView.AnimationLeftAutoPlay; }
@@ -365,6 +391,20 @@ namespace ImCup.ViewModel {
         }
         #endregion
 
+       /* protected Task CleanAnimationForm()
+        {
+           BaseView.GetBlank();
+            OnPropertyChanged("AnimationLeft");
+            OnPropertyChanged("AnimationRight");
+            OnPropertyChanged("AnimationLeftRowSpan");
+            OnPropertyChanged("AnimationLeftColumnSpan");
+            OnPropertyChanged("AnimationRightGridRowSpan");
+            OnPropertyChanged("AnimationLeftAutoPlay");
+            OnPropertyChanged("AnimationRightAutoPlay");
+            OnPropertyChanged("AnimationLeftLoop");
+            OnPropertyChanged("AnimationRightLoop");
+            return Task.Delay(1);
+        }*/
         protected virtual void FirstChoiceCommmandButton()
         {
             

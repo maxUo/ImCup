@@ -37,6 +37,7 @@
             Grid.ColumnSpan="{Binding ImageRightGridColumnSpan}"
             Source="{Binding ImageRight}" />
         <lottie:AnimationView
+            IsVisible="{Binding AnimationLeftIsVisible}"
             x:Name="AnimationLeftView"
             AutoPlay="{Binding AnimationLeftAutoPlay}"
             Loop="{Binding AnimationLeftLoop}"
@@ -46,6 +47,8 @@
             Grid.ColumnSpan="{Binding AnimationLeftColumnSpan}"
             Animation="{Binding AnimationLeft}" />
         <lottie:AnimationView
+            IsVisible="{Binding AnimationRightIsVisible}"
+            x:Name="AnimationRightView"
             AutoPlay="{Binding AnimationRightAutoPlay}"
             Loop="{Binding AnimationRightLoop}"
             Grid.Row="0"

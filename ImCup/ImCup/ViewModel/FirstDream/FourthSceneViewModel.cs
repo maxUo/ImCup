@@ -47,14 +47,32 @@ namespace ImCup.ViewModel.FirstDream
             NavigationImageRight = "acelerometre.png";
         }
 
-        protected override void AcelerometrMove()
+        protected override async void AcelerometrMove()
         {
+            NavigationImageRight = "nextActive.png";
+            NavigationRightButtonIsEnabled = "true";
             AnimationRight = "bee.json";
             AnimationRightLoop = false;
             AnimationRightAutoPlay = true;
             AnimationRightGridColumnSpan = "2";
             AnimationRightGridRowSpan = "2";
+            AnimationRightIsVisible = true;
             DependencyService.Get<IAudio>().PlayMp3File("");
+            await Task.Delay(1500);
+
+            BaseView.GetBlank();
+
+        }
+
+        protected override void NextScene()
+        {
+            //await CleanAnimationForm();
+            NextView(new FourthOneSceneViewModel());
+        }
+
+        protected override void BackScene()
+        {
+            NextView(new ThredSceneViewModel());
         }
     }
 }

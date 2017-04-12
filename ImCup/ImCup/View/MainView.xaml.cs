@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,11 +32,18 @@ namespace ImCup.View {
         private void GetNextProperty(BaseViewModel viewModel)
         {
             //  _model.NewView();
-            this.BaseViewModel = viewModel;
-            this.BindingContext = viewModel;
-            viewModel.NextView = GetNextProperty;
-            viewModel.PlayLeftAnimation = PlayLeftAnimation;
-            viewModel.GoBack = () => Navigation.PopModalAsync();
+            try
+            {
+                this.BaseViewModel = viewModel;
+                this.BindingContext = viewModel;
+                viewModel.NextView = GetNextProperty;
+                viewModel.PlayLeftAnimation = PlayLeftAnimation;
+                viewModel.GoBack = () => Navigation.PopModalAsync();
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+            }
         }
     }
 }
