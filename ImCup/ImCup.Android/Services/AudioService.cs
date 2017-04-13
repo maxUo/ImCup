@@ -15,20 +15,33 @@ namespace ImCup.Droid.Services
 
         private MediaPlayer _mediaPlayer;
 
-        public bool PlayMp3File(string fileName)
+        public int PlayMp3File(string fileName)
         {
-            _mediaPlayer = MediaPlayer.Create (global::Android.App.Application.Context, Resource.Raw.BZZZZ);
-            
+            int result;
+            switch (fileName)
+            {
+                case "BZZZZZ.mp3": _mediaPlayer = MediaPlayer.Create(global::Android.App.Application.Context, Resource.Raw.BZZZZ);
+                    break;
+                case "Grandfather1.mp3": _mediaPlayer = MediaPlayer.Create(global::Android.App.Application.Context, Resource.Raw.Grandfather1);
+                    break;
+                case "Fon.mp3":
+                    _mediaPlayer = MediaPlayer.Create(global::Android.App.Application.Context, Resource.Raw.Fon);
+                    break;
+            }
+        
+            //_mediaPlayer = MediaPlayer.Create (global::Android.App.Application.Context, Resource.Raw.BZZZZ);
             _mediaPlayer.Start ();
-            return true;
+            result = _mediaPlayer.AudioSessionId;
+            return result;
         }
 
-        public bool PlayWavFile(string fileName)
+        public void StopPlay(int ID)
         {
-            _mediaPlayer = MediaPlayer.Create(global::Android.App.Application.Context, Resource.Raw.Fon);
-            _mediaPlayer.Start();
-
-            return true;
+            if (_mediaPlayer != null)
+            {
+                _mediaPlayer.AudioSessionId = ID;
+                _mediaPlayer.Stop();
+            }
         }
     }
 }

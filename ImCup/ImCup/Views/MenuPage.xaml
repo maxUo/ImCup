@@ -4,24 +4,62 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
-    xmlns:forms1="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     BindingContext="BaseMenuPageViewModel">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="35*" />
-            <RowDefinition Height="20*" />
-            <RowDefinition Height="100*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <forms1:CachedImage
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+       
+        <ffimage:CachedImage
+            Grid.Row="0"
+            Grid.ColumnSpan="3"
             Grid.RowSpan="3"
             Aspect="AspectFill"
             Opacity="1"
-            Source="menu720.png" />
-        <forms:CarouselView Grid.Row="2" ItemsSource="{Binding ViewModels}">
+            Source="menu720.png"/>
+        <ffimage:CachedImage
+            Grid.Row="0"
+            Grid.Column="0"
+            Aspect="AspectFit"
+            Scale="0.7"
+            Opacity="1"
+            Source="sound.png"/>
+        
+        <ffimage:CachedImage
+            Grid.Row="0"
+            x:Name="ImageSound"
+            Grid.Column ="2"
+            Aspect="AspectFit"
+            Opacity="1"
+            Scale="0.7"
+            Source="settings.png"/>
+
+        <Button Grid.Row="0"
+                Grid.Column="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Opacity="0"
+                Clicked="ButtonSound"/>
+        <Button Grid.Row="0"
+                Grid.Column="2"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Opacity="0"
+                Clicked="ButtonSetting"/>
+
+        <forms:CarouselView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" ItemsSource="{Binding ViewModels}">
             <forms:CarouselView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <forms1:CachedImage
+                        <ffimage:CachedImage
                             Aspect="AspectFit"
                             Source="{Binding ImageSource}"/>
                         <Button Opacity="0" Command="{Binding ButtonShowCommand}"></Button>
@@ -29,6 +67,5 @@
                 </DataTemplate>
             </forms:CarouselView.ItemTemplate>
         </forms:CarouselView>
-
     </Grid>
 </ContentPage>

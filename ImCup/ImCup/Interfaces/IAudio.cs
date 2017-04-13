@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ImCup.Interfaces {
         public interface IAudio {
-            bool PlayMp3File( string fileName );
-            bool PlayWavFile( string fileName );
+            int PlayMp3File( string fileName );
+            void StopPlay(int ID);
         }
 
 }

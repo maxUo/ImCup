@@ -8,8 +8,9 @@
     BindingContext="BaseViewModel">
     <Grid BackgroundColor="Transparent">
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="24*" />
+            <RowDefinition Height="8*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -25,13 +26,13 @@
             Grid.ColumnSpan="{Binding ImageFonGridColumnSpan}"
             Source="{Binding ImageFon}" />
         <ffimage:CachedImage
-            Grid.Row="0"
+            Grid.Row="1"
             Grid.RowSpan="{Binding ImageLeftGridRowSpan}"
             Grid.Column="0"
             Grid.ColumnSpan="{Binding ImageLeftGridColumnSpan}"
             Source="{Binding ImageLeft}" />
         <ffimage:CachedImage
-            Grid.Row="0"
+            Grid.Row="1"
             Grid.RowSpan="{Binding ImageRightGridRowSpan}"
             Grid.Column="2"
             Grid.ColumnSpan="{Binding ImageRightGridColumnSpan}"
@@ -57,7 +58,7 @@
             Grid.ColumnSpan="{Binding AnimationRightGridColumnSpan}"
             Animation="{Binding AnimationRight}" />
         <Grid
-            Grid.Row="0"
+            Grid.Row="1"
             Grid.Column="0"
             Grid.ColumnSpan="4"
             HorizontalOptions="FillAndExpand"
@@ -93,17 +94,29 @@
             </Grid>
         </Grid>
         <ffimage:CachedImage
-            Grid.Row="1"
+            Grid.Row="0"
+            Grid.Column="0"
+            Scale="0.6"
+            Aspect="AspectFit"
+            Source="exit.png" />
+        <ffimage:CachedImage
+            Grid.Row="0"
+            Grid.Column="3"
+            Scale="0.6"
+            Aspect="AspectFit"
+            Source="sound.png" />
+        <ffimage:CachedImage
+            Grid.Row="2"
             Grid.Column="0"
             Aspect="AspectFit"
             Source="{Binding NavigationImageLeft}" />
         <ffimage:CachedImage
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.Column="3"
             Aspect="AspectFit"
             Source="{Binding NavigationImageRight}" />
         <BoxView
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.Column="0"
             Grid.ColumnSpan="4"
                 BackgroundColor="White"
@@ -111,7 +124,7 @@
                 Opacity="0.4"
                 VerticalOptions="FillAndExpand" />
         <Button
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.Column="0"
             Command="{Binding BackSceneCommand}"
             HorizontalOptions="FillAndExpand"
@@ -119,7 +132,7 @@
             Opacity="0"
             VerticalOptions="FillAndExpand" />
         <Button
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.Column="3"
             Command="{Binding NextSceneCommand}"
             HorizontalOptions="FillAndExpand"
@@ -127,15 +140,14 @@
             Opacity="0"
             VerticalOptions="FillAndExpand" />
         <ScrollView 
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.Column="1"
             Grid.ColumnSpan="2"
             HorizontalOptions="FillAndExpand">
-                <Label
+            <Label
                 FontSize="26"
                 HorizontalTextAlignment="Center"
                 Text="{Binding Text}" />
         </ScrollView>
-        
     </Grid>
 </ContentPage>

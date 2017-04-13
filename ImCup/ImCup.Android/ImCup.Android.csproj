@@ -354,7 +354,6 @@
     <AndroidAsset Include="Assets\progress_bar.json" />
     <AndroidAsset Include="Assets\loading_semicircle.json" />
     <AndroidAsset Include="Assets\beesDiver.json" />
-    <AndroidAsset Include="Assets\pandaDiver.json" />
     <AndroidAsset Include="Assets\pandaDiver1.json" />
     <None Include="Connected Services\imaginationCupMobileApp\ConnectedService.json" />
     <None Include="google-services.json" />
@@ -504,6 +503,18 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\most.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\raw\Grandfather1.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\sound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\exit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

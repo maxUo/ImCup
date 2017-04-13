@@ -19,6 +19,7 @@ namespace ImCup.ViewModel {
         public Action GoBack;
         public Action PlayLeftAnimation;
         protected bool _isUsed;
+        protected int musicId;
         public BaseViewModel()
         {
             _isUsed = false;
@@ -45,9 +46,9 @@ namespace ImCup.ViewModel {
         {
             ImageFon = ImageFon;
             ImageFonGridColumnSpan = "4";
-            ImageFonGridRowSpan = "2";
+            ImageFonGridRowSpan = "3";
 
-            Text = "Идет загрузка...";
+            Text = "Loading...";
 
             AnimationLeft = "loading_semicircle.json";
             AnimationLeftAutoPlay = true;
@@ -58,7 +59,7 @@ namespace ImCup.ViewModel {
             //PlayLeftAnimation?.Invoke();
 
             AnimationLeftColumnSpan = "4";
-            AnimationLeftRowSpan = "2";
+            AnimationLeftRowSpan = "3";
 
             NavigationImageLeft = "backActive.png";
             NavigationImageRight = "nextActive.png";
@@ -390,21 +391,6 @@ namespace ImCup.ViewModel {
             }
         }
         #endregion
-
-       /* protected Task CleanAnimationForm()
-        {
-           BaseView.GetBlank();
-            OnPropertyChanged("AnimationLeft");
-            OnPropertyChanged("AnimationRight");
-            OnPropertyChanged("AnimationLeftRowSpan");
-            OnPropertyChanged("AnimationLeftColumnSpan");
-            OnPropertyChanged("AnimationRightGridRowSpan");
-            OnPropertyChanged("AnimationLeftAutoPlay");
-            OnPropertyChanged("AnimationRightAutoPlay");
-            OnPropertyChanged("AnimationLeftLoop");
-            OnPropertyChanged("AnimationRightLoop");
-            return Task.Delay(1);
-        }*/
         protected virtual void FirstChoiceCommmandButton()
         {
             

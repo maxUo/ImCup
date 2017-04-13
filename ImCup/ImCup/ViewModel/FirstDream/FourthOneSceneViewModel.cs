@@ -26,7 +26,7 @@ namespace ImCup.ViewModel.FirstDream
 
             ImageFon = "most.jpg";
             ImageFonGridColumnSpan = "4";
-            ImageFonGridRowSpan = "2";
+            ImageFonGridRowSpan = "3";
 
             AnimationLeft = "pandaDiver1.json";
             AnimationLeftAutoPlay = true;

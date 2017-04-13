@@ -11,19 +11,27 @@ namespace ImCup.ViewModel.FirstDream
     public class ThredSceneViewModel:BaseViewModel
     {
         TodoItemManager manager;
+        private bool _eng;
         public ThredSceneViewModel()
         {
+            Eng = true;
             BaseView.GetBlank();
             ImageFon = "road1.png";
             PlaySlideAnim();
 
-            manager = TodoItemManager.DefaultManager;
+            //manager = TodoItemManager.DefaultManager;
 
-            var todo = new TodoItem { Name = "Ale"};
-            AddItem(todo);
+            //var todo = new TodoItem { Name = "Ale"};
+            //AddItem(todo);
             //var client = new MobileServiceClient("http://imaginationcup.azurewebsites.net");
 
 
+        }
+
+        public bool Eng
+        {
+            get { return _eng; }
+            private set { _eng = value; }
         }
         private async void AddItem(TodoItem item)
         {
@@ -32,17 +40,28 @@ namespace ImCup.ViewModel.FirstDream
         protected override void OnCreate()
         {
             base.BaseView.GetBlank();
-
-            Text = 
+            if (Eng)
+            {
+                Text =
+                    "The reader will have to help our \n\r" +
+                    "hero to begin the journey by choosing\n\r" +
+                    "the object which will help\n\r" +
+                    "him to determine the way to move.\n\r";
+            }
+            else
+            {
+                Text =
                 "Чтобы начать путешествие, нужно выяснить,\n\r" +
                 "в какую сторону двигаться.\n\r" +
                 "Читателю придется помочь\n\r" +
                 "нашему герою выбрать предмет,\n\r" +
-                "с помощью которого он это определит\n\r";
+                "с помощью которого он это определит.\n\r";
+            }
+            
 
             ImageFon = "ways.png";
             ImageFonGridColumnSpan = "4";
-            ImageFonGridRowSpan = "2";
+            ImageFonGridRowSpan = "3";
 
             NavigationLeftButtonIsEnabled = "true";
             NavigationRightButtonIsEnabled = "false";
