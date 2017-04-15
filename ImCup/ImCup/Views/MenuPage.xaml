@@ -22,27 +22,24 @@
             Grid.Row="0"
             Grid.ColumnSpan="3"
             Grid.RowSpan="3"
-            Aspect="AspectFill"
+            Aspect="Fill"
             Opacity="1"
             Source="menu720.png"/>
         <ffimage:CachedImage
-            Grid.Row="0"
+            Grid.Row="2"
             Grid.Column="0"
-            Aspect="AspectFit"
-            Scale="0.7"
+            Scale="1"
             Opacity="1"
             Source="sound.png"/>
         
         <ffimage:CachedImage
-            Grid.Row="0"
-            x:Name="ImageSound"
+            Grid.Row="2"
             Grid.Column ="2"
-            Aspect="AspectFit"
             Opacity="1"
-            Scale="0.7"
+            Scale="1"
             Source="settings.png"/>
 
-        <Button Grid.Row="0"
+        <Button Grid.Row="2"
                 Grid.Column="0"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand"

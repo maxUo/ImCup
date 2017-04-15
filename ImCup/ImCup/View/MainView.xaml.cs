@@ -9,23 +9,36 @@ using ImCup.Model;
 using ImCup.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Diagnostics.Contracts;
+using Microsoft.ProjectOxford.Emotion;
+using Microsoft.ProjectOxford.Emotion.Contract;
+using Microsoft.ProjectOxford.Face;
+using Microsoft.ProjectOxford.Face.Contract;
+using Plugin.Connectivity;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 
 namespace ImCup.View {
     [XamlCompilation (XamlCompilationOptions.Compile)]
-    public partial class MainView
+    public partial class MainView : ContentPage
     {
         public MainView(BaseViewModel model) {
-            InitializeComponent ();
+            InitializeComponent();
             this.BaseViewModel = model;
             this.BindingContext = model;
             model.NextView = GetNextProperty;
             model.PlayLeftAnimation = PlayLeftAnimation;
+            model.GoLucher = GoLucher;
             model.GoBack = () => Navigation.PopModalAsync();
+        }
+
+        private async void GoLucher()
+        {
+            await Navigation.PushModalAsync(new LucherTest());
         }
 
         private  void PlayLeftAnimation()
         {
-            AnimationLeftView.Play();
         }
 
         public BaseViewModel BaseViewModel { get; set; }
@@ -38,6 +51,7 @@ namespace ImCup.View {
                 this.BindingContext = viewModel;
                 viewModel.NextView = GetNextProperty;
                 viewModel.PlayLeftAnimation = PlayLeftAnimation;
+                viewModel.GoLucher = GoLucher;
                 viewModel.GoBack = () => Navigation.PopModalAsync();
             }
             catch (Exception e)

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="ImCup.View.LucherTest">
+    <Grid>
+        <forms:CachedImage Aspect="Fill" Source="most.jpg"/>
+        <Grid BackgroundColor="Transparent" Padding="20,20,20,20" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <forms:CachedImage x:Name="blue" Grid.Row="0" Grid.Column="0" Source="blue.png"/>
+            <forms:CachedImage x:Name="black" Grid.Row="0" Grid.Column="1" Source="black.png"/>
+            <forms:CachedImage x:Name="korichn" Grid.Row="0" Grid.Column="2" Source="korichn.png"/>
+            <forms:CachedImage x:Name="fiolet" Grid.Row="0" Grid.Column="3" Source="fiolet.png"/>
+
+            <forms:CachedImage x:Name="red" Grid.Row="1" Grid.Column="0" Source="red.png"/>
+            <forms:CachedImage x:Name="green" Grid.Row="1" Grid.Column="1" Source="green.png"/>
+            <forms:CachedImage x:Name="yellow" Grid.Row="1" Grid.Column="2" Source="yellow.png"/>
+            <forms:CachedImage x:Name="grye" Grid.Row="1" Grid.Column="3" Source="grey.png"/>
+
+            <Button Opacity="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Grid.Column="0"
+                Grid.Row="0" Clicked="ButtonBlue"/>
+            <Button Opacity="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Grid.Column="1"
+                Grid.Row="0" Clicked="ButtonBlack"/>
+            <Button Opacity="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Grid.Column="2"
+                Grid.Row="0" Clicked="ButtonKorich"/>
+            <Button Opacity="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Grid.Column="3"
+                Grid.Row="0" Clicked="ButtonFiolet"/>
+
+            <Button Opacity="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Grid.Column="0"
+                Grid.Row="1" Clicked="ButtonRed"/>
+            <Button Opacity="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Grid.Column="1"
+                Grid.Row="1" Clicked="ButtonGreen"/>
+            <Button Opacity="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Grid.Column="2"
+                Grid.Row="1" Clicked="ButtonYellow"/>
+            <Button Opacity="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Grid.Column="3"
+                Grid.Row="1" Clicked="ButtonGrey"/>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -63,26 +63,24 @@ namespace ImCup
         }
 
         private async void TakePictureButton_Clicked(
-            object sender, EventArgs e)
+  object sender, EventArgs e)
         {
             await CrossMedia.Current.Initialize();
 
             if (!CrossMedia.Current.IsCameraAvailable ||
-                !CrossMedia.Current.IsTakePhotoSupported)
+              !CrossMedia.Current.IsTakePhotoSupported)
             {
                 await DisplayAlert("No Camera",
-                    "No camera available.", "OK");
+                  "No camera available.", "OK");
                 return;
             }
 
-            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
-            {
-                DefaultCamera = CameraDevice.Front,
-                SaveToAlbum = true,
-                Directory = "Sample",
-                Name = "test.jpg"
-            });
-
+            var file = await CrossMedia.Current.TakePhotoAsync(
+                new StoreCameraMediaOptions
+                {
+                    SaveToAlbum = true,
+                    Name = "test.jpg"
+                });
 
             if (file == null)
                 return;
@@ -91,17 +89,12 @@ namespace ImCup
             this.Indicator1.IsRunning = true;
 
             Image1.Source = ImageSource.FromStream(() =>
-                file.GetStream());
-
-            FaceEmotionDetection theData = await DetectFaceAndEmotionsAsync(file);
-            this.BindingContext = theData;
+              file.GetStream());
 
             this.Indicator1.IsRunning = false;
             this.Indicator1.IsVisible = false;
-
         }
-
-        private async Task<FaceEmotionDetection>DetectFaceAndEmotionsAsync(MediaFile inputFile)
+        private async Task<FaceEmotionDetection> DetectFaceAndEmotionsAsync(MediaFile inputFile)
         {
             try
             {

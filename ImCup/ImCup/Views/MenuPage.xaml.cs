@@ -29,10 +29,9 @@ namespace ImCup.Views {
             ViewModels[1].RecognitionPage = ShowRecognition;
 
             IsPlaying = true;
-            musicId=DependencyService.Get<IAudio>().PlayMp3File("Fon.mp3");
+            DependencyService.Get<IAudio>().PlayMp3File("Fon.mp3");
             BindingContext = this;
         }
-        private int musicId;
         public ObservableCollection<BaseMenuPageViewModel> ViewModels
         {
             get { return _viewModels; }
@@ -44,27 +43,22 @@ namespace ImCup.Views {
                 }
             }
         }
-
+        private async void ShowDream(BaseViewModel viewModel)
+        {
+            await Navigation.PushModalAsync(new MainView(viewModel));
+        }
         private async void ShowRecognition()
         {
             await Navigation.PushModalAsync(new RecognitionPage());
         }
-        private async void ShowDream(BaseViewModel viewModel)
-        {
-            await Navigation.PushModalAsync(new MainView (viewModel));
-        }
-
-        private void Button_OnClicked(object sender, EventArgs e)
-        {
-            
-        }
+       
 
         private bool IsPlaying;
         private void ButtonSound(object sender, EventArgs e)
         {
             if (IsPlaying)
             {
-                DependencyService.Get<IAudio>().StopPlay(musicId);
+                DependencyService.Get<IAudio>().StopPlay();
                 IsPlaying = false;
             }
             else

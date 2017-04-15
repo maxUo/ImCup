@@ -33,10 +33,6 @@ namespace ImCup.ViewModel.FirstDream
             get { return _eng; }
             private set { _eng = value; }
         }
-        private async void AddItem(TodoItem item)
-        {
-            await manager.SaveTaskAsync(item);
-        }
         protected override void OnCreate()
         {
             base.BaseView.GetBlank();
@@ -71,8 +67,8 @@ namespace ImCup.ViewModel.FirstDream
             NavigationImageRight = "nextNoACtive.png";
 
             FirstChoiceImage = "compas.png";
-            SecondChoiceImage = "Tube.png";
-            ThirdChoiceImage = "BottleMap.png";
+            SecondChoiceImage = "BottleMap.png";
+            ThirdChoiceImage = "Tube.png";
 
 
         }
@@ -82,10 +78,20 @@ namespace ImCup.ViewModel.FirstDream
             NextView(new SecondSceneViewModel());
         }
 
+        protected override void FirstChoiceCommmandButton()
+        {
+            NextView(new Stray228ViewModel());
+        }
+
         protected override void ThirdChoiceCommmandButton()
         {
             //base.ThirdChoiceCommmandButton();
             NextView(new FourthSceneViewModel());
+        }
+
+        protected override void SecondChoiceCommmandButton()
+        {
+            NextView(new CatsSceneViewModel());
         }
     }
 }

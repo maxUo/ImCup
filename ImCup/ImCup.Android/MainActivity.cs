@@ -12,9 +12,10 @@ using Android.Util;
 using Gcm.Client;
 using Plugin.Permissions;
 using Microsoft.WindowsAzure.MobileServices;
-
+[assembly: UsesFeature("android.hardware.camera", Required = false)]
+[assembly: UsesFeature("android.hardware.camera.autofocus", Required = false)]
 namespace ImCup.Droid {
-    [Activity (Label = "@string/app_name", Theme = "@style/MyTheme", MainLauncher = true, ScreenOrientation = ScreenOrientation.Sensor)]
+    [Activity (Label = "@string/app_name", Theme = "@style/MyTheme", MainLauncher = true, ScreenOrientation = ScreenOrientation.ReverseLandscape)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity  {
         public static MainActivity instance;
         protected override void OnCreate( Bundle bundle ) {

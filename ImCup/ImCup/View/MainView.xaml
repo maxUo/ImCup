@@ -20,6 +20,7 @@
         </Grid.ColumnDefinitions>
 
         <ffimage:CachedImage
+            Aspect="Fill"
             Grid.Row="0"
             Grid.RowSpan="{Binding ImageFonGridRowSpan}"
             Grid.Column="0"
@@ -54,7 +55,7 @@
             Loop="{Binding AnimationRightLoop}"
             Grid.Row="0"
             Grid.RowSpan="{Binding AnimationRightGridRowSpan}"
-            Grid.Column="2"
+            Grid.Column="0"
             Grid.ColumnSpan="{Binding AnimationRightGridColumnSpan}"
             Animation="{Binding AnimationRight}" />
         <Grid

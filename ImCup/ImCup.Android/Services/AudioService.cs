@@ -15,7 +15,7 @@ namespace ImCup.Droid.Services
 
         private MediaPlayer _mediaPlayer;
 
-        public int PlayMp3File(string fileName)
+        public void PlayMp3File(string fileName)
         {
             int result;
             switch (fileName)
@@ -31,17 +31,11 @@ namespace ImCup.Droid.Services
         
             //_mediaPlayer = MediaPlayer.Create (global::Android.App.Application.Context, Resource.Raw.BZZZZ);
             _mediaPlayer.Start ();
-            result = _mediaPlayer.AudioSessionId;
-            return result;
         }
 
-        public void StopPlay(int ID)
+        public void StopPlay()
         {
-            if (_mediaPlayer != null)
-            {
-                _mediaPlayer.AudioSessionId = ID;
-                _mediaPlayer.Stop();
-            }
+            _mediaPlayer?.Stop();
         }
     }
 }

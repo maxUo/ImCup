@@ -18,6 +18,7 @@ namespace ImCup.ViewModel {
         public Action<BaseViewModel> NextView;
         public Action GoBack;
         public Action PlayLeftAnimation;
+        public Action GoLucher;
         protected bool _isUsed;
         protected int musicId;
         public BaseViewModel()

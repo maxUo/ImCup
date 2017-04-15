@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using ImCup.Interfaces;
 using Xamarin.Forms;
 
@@ -48,13 +44,9 @@ namespace ImCup.ViewModel.FirstDream
                 "Придется трясти дерево!\n\r";
             }
 
-            ImageFon = "arbre1.png";
+            ImageFon = "tree.png";
             ImageFonGridColumnSpan = "4";
             ImageFonGridRowSpan = "3";
-
-            ImageLeft = "pandaVbok.png";
-            ImageLeftGridColumnSpan = "2";
-            ImageLeftGridRowSpan = "2";
             /*
             AnimationLeft = "bee.json";
             AnimationLeftAutoPlay = false;
@@ -90,13 +82,21 @@ namespace ImCup.ViewModel.FirstDream
 
             NavigationImageRight = "nextActive.png";
             NavigationRightButtonIsEnabled = "true";
-            AnimationRight = "bee.json";
+            /*AnimationRight = "bee.json";
             AnimationRightLoop = false;
             AnimationRightAutoPlay = true;
             AnimationRightGridColumnSpan = "2";
             AnimationRightGridRowSpan = "3";
-            AnimationRightIsVisible = true;
-            DependencyService.Get<IAudio>().PlayMp3File("");
+            AnimationRightIsVisible = true;*/
+
+            AnimationLeft = "bee.json";
+            AnimationLeftLoop = false;
+            AnimationLeftAutoPlay = true;
+            AnimationLeftColumnSpan = "4";
+            AnimationLeftIsVisible = true;
+            AnimationLeftRowSpan = "2";
+
+            DependencyService.Get<IAudio>().PlayMp3File("BZZZZZ.mp3");
             await Task.Delay(1500);
 
             BaseView.GetBlank();
@@ -106,11 +106,13 @@ namespace ImCup.ViewModel.FirstDream
         protected override void NextScene()
         {
             //await CleanAnimationForm();
+            DependencyService.Get<IAudio>().StopPlay();
             NextView(new FourthOneSceneViewModel());
         }
 
         protected override void BackScene()
         {
+            DependencyService.Get<IAudio>().StopPlay();
             NextView(new ThredSceneViewModel());
         }
     }

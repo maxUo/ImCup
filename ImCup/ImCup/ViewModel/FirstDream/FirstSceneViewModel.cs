@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using ImCup.Interfaces;
-using ImCup.Model;
-using Microsoft.WindowsAzure.MobileServices;
+﻿using ImCup.Interfaces;
 using Xamarin.Forms;
 
 namespace ImCup.ViewModel.FirstDream {
@@ -54,27 +44,24 @@ namespace ImCup.ViewModel.FirstDream {
             ImageFonGridColumnSpan = "4";
             ImageFonGridRowSpan = "3";
 
-            ImageLeft = "pandaAndDed.png";
-            ImageLeftGridColumnSpan = "4";
-            ImageLeftGridRowSpan = "2";
-
             NavigationImageLeft = "backActive.png";
             NavigationImageRight = "nextActive.png";
 
             NavigationLeftButtonIsEnabled = "true";
             NavigationRightButtonIsEnabled = "true";
-            musicId = DependencyService.Get<IAudio>().PlayMp3File("Grandfather1.mp3");
+            DependencyService.Get<IAudio>().PlayMp3File("Grandfather1.mp3");
 
         }
 
         protected override void NextScene()
         {
+            DependencyService.Get<IAudio>().StopPlay();
             NextView(new SecondSceneViewModel());
         }
 
         protected override void BackScene()
         {
-            DependencyService.Get<IAudio>().StopPlay(musicId);
+            DependencyService.Get<IAudio>().StopPlay();
             GoBack?.Invoke();
         }
     }
